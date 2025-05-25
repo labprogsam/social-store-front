@@ -31,22 +31,6 @@ Por meio da plataforma, as ONGs podem criar anúncios detalhados de seus produto
 - **Google Cloud Plataform**
 - **Docker**
 
-### Back-End
-- **API RESTful**
-- **Node.js**
-- **Express**
-- **Sequelize ORM**
-- **Middlewares**
-- **Sistema de autenticação com tokens (JWT)**
-- **Google Cloud Plataform**
-- **Docker**
-
-### Banco de Dados
-- **PostgreSQL**
-
-### Armazenamento de Imagens
-- **Cloudinary** (upload, processamento e armazenamento)
-
 ## Documentação
 - [Documentação dos requisitos]()
 - [Documentação Técnica (Back e Front)]()
@@ -65,7 +49,6 @@ Por meio da plataforma, as ONGs podem criar anúncios detalhados de seus produto
 
 ## Como acessar no navegador?
 **[Clique aqui]() para acessar o front no navegador.**
-**[Clique aqui]() para acessar o backend no navegador.**
 
 ### Outros
 - **Figma** (Protótipos)
