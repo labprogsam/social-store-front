@@ -25,7 +25,7 @@ Por meio da plataforma, as ONGs podem criar anúncios detalhados de seus produto
 ## Tecnologias Utilizadas
 ### Front-End
 - **React.js**
-- **CSS**
+- **Styled Components**
 - **Material UI tools**
 - **Axios**
 - **Google Cloud Plataform**
