@@ -137,7 +137,7 @@ A plataforma Social Store encontra-se em desenvolvimento ativo. Novas funcionali
       </td>
       <td align="center">
         <img src="" width="100px" alt="Pessoa 3"/><br/>
-        <b>Pessoa 3</b>
+        <b>Ivan</b>
       </td>
     </tr>
   </table>
