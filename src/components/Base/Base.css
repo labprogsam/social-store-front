@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .base-main-content {
 	display: flex;
 	align-items: flex-start;

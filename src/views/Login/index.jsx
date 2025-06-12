@@ -37,49 +37,51 @@ const Register = () => {
   }
 
   return (
-    <MainContainer>
-      <ImageSide>
-        <div className="image-content">
-          {/* <img src={LogoIcon} alt="Logo traços" /> */}
-        </div>
-      </ImageSide>
-      <FormSide>
-        <FormContainer onSubmit={(e) => onSubmit(e)}>
-          <h1>Boas-vindas</h1>
-          <TextField
-            type="email"
-            value={email}
-            onChange={(e) => handleChange(e, setEmail)}
-            fullWidth
-            size="small"
-            label="Email*"
-            variant="outlined"
-            margin="normal"
-          />
-          <TextField
-            fullWidth
-            type="password"
-            value={password}
-            onChange={(e) => handleChange(e, setPassword)}
-            label="Senha*"
-            size="small"
-            variant="outlined"
-            margin="normal"
-          />
-          <div id="actions">
-            <Button type="submit" id="entrar" fullWidth variant="contained">
-              Entrar
-            </Button>
-            <Link id="register-button" to="/auth/register">
-              <Button type="submit" id="cadastre" fullWidth variant="contained">
-                Crie uma conta
-              </Button>
-            </Link>
-            <Link to="/auth/forgot-password">Esqueci minha senha</Link>
+    <div className="">
+      <MainContainer>
+        <ImageSide>
+          <div className="image-content">
+            {/* <img src={LogoIcon} alt="Logo traços" /> */}
           </div>
-        </FormContainer>
-      </FormSide>
-    </MainContainer>
+        </ImageSide>
+        <FormSide>
+          <FormContainer onSubmit={(e) => onSubmit(e)}>
+            <h1>Boas-vindas</h1>
+            <TextField
+              type="email"
+              value={email}
+              onChange={(e) => handleChange(e, setEmail)}
+              fullWidth
+              size="small"
+              label="Email*"
+              variant="outlined"
+              margin="normal"
+            />
+            <TextField
+              fullWidth
+              type="password"
+              value={password}
+              onChange={(e) => handleChange(e, setPassword)}
+              label="Senha*"
+              size="small"
+              variant="outlined"
+              margin="normal"
+            />
+            <div id="actions">
+              <Button type="submit" id="entrar" fullWidth variant="contained">
+                Entrar
+              </Button>
+              <Link id="register-button" to="/auth/register">
+                <Button type="submit" id="cadastre" fullWidth variant="contained">
+                  Crie uma conta
+                </Button>
+              </Link>
+              <Link to="/auth/forgot-password">Esqueci minha senha</Link>
+            </div>
+          </FormContainer>
+        </FormSide>
+      </MainContainer>
+    </div>
   );
 };
 
