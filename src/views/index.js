@@ -1,11 +1,11 @@
-import Home from './Home';
-import Forgot from './Forgot';
-import Register from './Register';
-import Login from './Login';
+import HomeView from './Home';
+import CategoriesView from './Categories';
+import ProductView from './Product';
+import OngView from './Ong';
 
 export {
-    Home,
-    Forgot,
-    Register,
-    Login
+    HomeView,
+    CategoriesView,
+    ProductView,
+    OngView
 }

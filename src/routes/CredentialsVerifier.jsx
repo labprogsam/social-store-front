@@ -4,12 +4,12 @@ import { Redirect, Route } from 'react-router-dom';
 import { getUser } from '../services/user';
 import { useAuth } from '../contexts/auth';
 
-function PrivateRoute({ component: Comp, location, ...rest }) {
+function CredentialsVerifier({ component: Comp, location, ...rest }) {
   const { signOut } = useAuth();
   const cookies = Cookies.get();
 
   const clearCookies = async () => {
-    let isLogged = true;
+    let isLogged = false;
     try {
       // Checks token and returns a bool
       isLogged = await getUser();
@@ -26,7 +26,7 @@ function PrivateRoute({ component: Comp, location, ...rest }) {
   }
 
   useEffect(() => {
-    clearCookies()
+    clearCookies()  
   }, [cookies]);
 
   return (
@@ -37,11 +37,11 @@ function PrivateRoute({ component: Comp, location, ...rest }) {
         true ? (
           <Comp {...props} />
         ) : (
-          <Redirect to={{ pathname: "/auth/login", state: { from: location } }} />
+          <Redirect to={{ pathname: "/app", state: { from: location } }} />
         )
       }
     />
   );
 }
 
-export default PrivateRoute;
+export default CredentialsVerifier;
