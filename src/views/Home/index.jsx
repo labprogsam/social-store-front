@@ -1,10 +1,22 @@
 import {
-  StyledContainer
-} from './styles'
+  Banner,
+  Categories,
+  Header,
+  OngCarousel,
+  ProductsHighlights,
+  Footer
+} from '../../components'
 
 function Home() {
   return (
-    <StyledContainer>TENTEE</StyledContainer>
+    <div>
+      <Header />
+      <Banner />
+      <Categories />
+      <ProductsHighlights />
+      <OngCarousel />
+      <Footer />
+    </div>
   )
 }
 
