@@ -1,0 +1,32 @@
+.infos_esquerda {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.infos_verticais {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.infos_verticais h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: bold;
+    color: #000000;
+}
+
+.infos_verticais h2 {
+    font-size: 1.0rem;
+    margin: 0;
+    font-weight: bold;
+    color: #13a6e4;
+}
+
+.description {
+    max-width: 500px;
+    text-align: justify;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
