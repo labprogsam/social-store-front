@@ -21,7 +21,7 @@ const ongs = [ong1, ong2, ong3, ong4, ong5, ong6, ong7, ong8];
 
 function OngCarousel() {
     return (
-    <div className="relative w-full">
+    <section className="relative w-full">
         <img src={bannerCarousel} alt="Banner Carousel" className="w-full h-auto" />
         <div className="absolute inset-0 flex items-center justify-center">
             <Swiper
@@ -47,7 +47,7 @@ function OngCarousel() {
 
             </Swiper>
         </div>
-    </div>
+    </section>
     );
 }
 
