@@ -145,8 +145,8 @@ A plataforma Social Store encontra-se em desenvolvimento ativo. Novas funcionali
         <b>Pessoa 1</b>
       </td>
       <td align="center">
-        <img src="" width="100px" alt="Pessoa 2"/><br/>
-        <b>Pessoa 2</b>
+        <img src="https://avatars.githubusercontent.com/u/155683708?v=4" width="100px" alt="Lucas Cabral"/><br/>
+        <b>Lucas Cabral</b>
       </td>
       <td align="center">
         <img src="https://avatars.githubusercontent.com/u/37546200?v=4" width="100px" alt="Samuel Miranda"/><br/>
