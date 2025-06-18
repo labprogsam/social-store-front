@@ -10,7 +10,7 @@ const PublicRoutes = () => {
   return (
     <Switch>
       <Route path={`${path}/home`} component={HomeView} />
-      <Route path={`${path}/categories`} component={CategoriesView} />
+      <Route path={`${path}/categories/:id`} component={CategoriesView} />
       <Route path={`${path}/ong`} component={OngView} />
       <Route path={`${path}/product`} component={ProductView} />
 

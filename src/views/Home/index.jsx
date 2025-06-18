@@ -10,12 +10,10 @@ import {
 function Home() {
   return (
     <div>
-      <Header />
       <Banner />
       <Categories />
       <ProductsHighlights />
       <OngCarousel />
-      <Footer />
     </div>
   )
 }
