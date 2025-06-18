@@ -37,6 +37,5 @@ export const TitleText = styled.h2`
 export const ProductsFlexContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
-    justify-content: flex-start;
+    justify-content: space-evenly;
 `;

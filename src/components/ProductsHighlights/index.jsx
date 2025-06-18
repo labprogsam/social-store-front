@@ -1,20 +1,14 @@
-import { useState } from "react";
 import productsData from "./ProductsData";
-import ProductCard from "./ProductCard";
+import ProductCard from "./Card";
 import {
   SectionContainer,
   MainContentContainer,
   TitleBar,
   TitleText,
   ProductsFlexContainer,
-} from './ProductsHighlights.styles';
+} from './styles.js';
 
 function ProductsHighlights() {
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
-  const handleCardClick = (ProductName) => {
-    setSelectedProduct(ProductName);
-  };
 
   return (
     <SectionContainer>
@@ -30,7 +24,6 @@ function ProductsHighlights() {
             <ProductCard 
               key={index}
               produto={produto}
-              isSelected={selectedProduct === produto.nome}
               onClick={() => handleCardClick(produto.nome)}
             />
           ))}

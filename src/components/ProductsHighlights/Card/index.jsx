@@ -1,4 +1,3 @@
-import React from "react";
 import {
   CardContainer,
   ImageContainer,
@@ -6,11 +5,11 @@ import {
   DetailsContainer,
   ProductName,
   ProductPrice,
-} from "./ProductCard.styles";
+} from "./styles.js";
 
-function ProductCard({ produto, isSelected, onClick }) {
+function ProductCard({ produto, onClick }) {
   return (
-    <CardContainer $isSelected={isSelected} onClick={onClick}>
+    <CardContainer onClick={onClick}>
       <ImageContainer>
         <ProductImage src={produto.imagem} alt={produto.nome} />
       </ImageContainer>
