@@ -1,7 +1,10 @@
 
 function OngCarousel() {
     return (
-        <div>Monte o banner aqui</div>
+        <section>
+            Diogo da Silva Rodrigues
+            
+        </section>
     )
 }
 
