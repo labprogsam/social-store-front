@@ -39,9 +39,9 @@ function OngCarousel() {
         >
             <SwiperSlide>
                 <div className="text-center text-5xl font-bold mt-14 mb-20"><b>Nossas Ongs</b></div>
-                <div className=" grid grid-cols-2 lg:grid-cols-4 gap-y-10 px-[10%]">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10 px-[10%]">
                         {ongs.map((logo, index) => (
-                            <img key={index} src={logo} alt={`ONG ${index + 1}`} className="h-44 mx-auto"/>
+                            <img key={index} src={logo} alt={`ONG ${index + 1}`} className="cursor-pointer h-44 mx-auto"/>
                         ))}
                     </div>
                     <div className='mt-40'/>
