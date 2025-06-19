@@ -6,7 +6,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import bannerCarousel from '../../assets/CarouselMoc/bannerCarousel.svg';
 import ong1 from '../../assets/CarouselMoc/ong1.svg';
 import ong2 from '../../assets/CarouselMoc/ong2.svg';
 import ong3 from '../../assets/CarouselMoc/ong3.svg';
@@ -15,8 +14,19 @@ import ong5 from '../../assets/CarouselMoc/ong5.svg';
 import ong6 from '../../assets/CarouselMoc/ong6.svg';
 import ong7 from '../../assets/CarouselMoc/ong7.svg';
 import ong8 from '../../assets/CarouselMoc/ong8.svg';
+import dividingLine from '../../assets/CarouselMoc/dividingLine.svg';
+import bannerCarousel from '../../assets/CarouselMoc/bannerCarousel.svg';
 
-const ongs = [ong1, ong2, ong3, ong4, ong5, ong6, ong7, ong8];
+const ongs = [
+    ong1,
+    ong2,
+    ong3, 
+    ong4,
+    ong5,
+    ong6,
+    ong7,
+    ong8
+];
 
 
 function OngCarousel() {
@@ -29,30 +39,32 @@ function OngCarousel() {
         backgroundPosition: 'center',
     }}
     >
+        <div className="text-center text-6xl font-bold pt-20">
+            <b>Nossas Ongs</b>
+            </div>
+        <img src={dividingLine} alt="Dividing line" className="mx-auto mt-4 mb-28"/>
         <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={10}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        className=""
+        className=''
         >
             <SwiperSlide>
-                <div className="text-center text-5xl font-bold mt-14 mb-20"><b>Nossas Ongs</b></div>
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10 px-[10%]">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-16 px-[4%]">
                         {ongs.map((logo, index) => (
-                            <img key={index} src={logo} alt={`ONG ${index + 1}`} className="cursor-pointer h-44 mx-auto"/>
+                            <img key={index} src={logo} alt={`ONG ${index + 1}`} className="cursor-pointer h-60 mx-auto"/>
                         ))}
                     </div>
-                    <div className='mt-40'/>
+                    <div className="mt-40"/>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <div className="text-center text-6xl">Slide Teste</div>
+                    <div className="text-center text-4xl">Slide Teste</div>
                 </SwiperSlide>
 
             </Swiper>
-       
     </section>
     );
 }
