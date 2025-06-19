@@ -21,32 +21,38 @@ const ongs = [ong1, ong2, ong3, ong4, ong5, ong6, ong7, ong8];
 
 function OngCarousel() {
     return (
-    <section className="relative w-full">
-        <img src={bannerCarousel} alt="Banner Carousel" className="w-full h-auto" />
-        <div className="absolute inset-0 flex items-center justify-center">
-            <Swiper
-            modules={[Navigation, Pagination]}
-            spaceBetween={10}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            className="w-full px-10"
-            >
-                
-                <SwiperSlide>
-                    <div className="grid grid-cols-4 gap-4 p-16">
+    <section
+    className=''
+    style={{
+        backgroundImage: `url(${bannerCarousel})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+    }}
+    >
+        <Swiper
+        modules={[Navigation, Pagination]}
+        spaceBetween={10}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        className=""
+        >
+            <SwiperSlide>
+                <div className="text-center text-5xl font-bold mt-14 mb-20"><b>Nossas Ongs</b></div>
+                <div className=" grid grid-cols-2 lg:grid-cols-4 gap-y-10 px-[10%]">
                         {ongs.map((logo, index) => (
-                            <img key={index} src={logo} alt={`ONG ${index + 1}`} className="h-24 object-contain mx-auto" />
+                            <img key={index} src={logo} alt={`ONG ${index + 1}`} className="h-44 mx-auto"/>
                         ))}
                     </div>
+                    <div className='mt-40'/>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <div className="text-center text-2xl">Slide Teste</div>
+                    <div className="text-center text-6xl">Slide Teste</div>
                 </SwiperSlide>
 
             </Swiper>
-        </div>
+       
     </section>
     );
 }
