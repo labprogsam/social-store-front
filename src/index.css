@@ -42,3 +42,14 @@ a:visited { text-decoration: none; color:#000; }
 a:hover { text-decoration: none; color:#000; }
 a:focus { text-decoration: none; color:#000; }
 a:hover, a:active { text-decoration: none; color:#000 }
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: black !important;
+}
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+  background: rgb(0, 0, 255) !important;
+  margin-top: 20px
+}

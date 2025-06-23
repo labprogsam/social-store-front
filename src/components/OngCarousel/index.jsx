@@ -32,32 +32,32 @@ const ongs = [
 function OngCarousel() {
     return (
     <section
-    className=''
+    className="pt-16 pb-28 relative"
     style={{
         backgroundImage: `url(${bannerCarousel})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
     }}
     >
-        <div className="text-center text-6xl font-bold pt-20">
+        <div className="text-center text-6xl font-bold mb-16">
             <b>Nossas Ongs</b>
-            </div>
-        <img src={dividingLine} alt="Dividing line" className="mx-auto mt-4 mb-28"/>
+        <img src={dividingLine} alt="Dividing line" className="mx-auto mt-4"/>
+        </div>
         <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={10}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        className=''
+        className=""
         >
+
             <SwiperSlide>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-16 px-[4%]">
                         {ongs.map((logo, index) => (
                             <img key={index} src={logo} alt={`ONG ${index + 1}`} className="cursor-pointer h-60 mx-auto"/>
                         ))}
                     </div>
-                    <div className="mt-40"/>
                 </SwiperSlide>
 
                 <SwiperSlide>
