@@ -28,9 +28,12 @@ const ongs = [
     ong8
 ];
 
+const slideStyle = "grid grid-cols-2 lg:grid-cols-4 gap-y-16 px-[4%]"
+const imageStyle = "cursor-pointer h-60 mx-auto"
 
 function OngCarousel() {
     return (
+
     <section
     className="pt-16 pb-28 relative"
     style={{
@@ -39,10 +42,12 @@ function OngCarousel() {
         backgroundPosition: 'center',
     }}
     >
-        <div className="text-center text-6xl font-bold mb-16">
+
+        <div className="text-center text-6xl font-bold mt-2 mb-16">
             <b>Nossas Ongs</b>
-        <img src={dividingLine} alt="Dividing line" className="mx-auto mt-4"/>
+            <img src={dividingLine} alt="Dividing line" className="mx-auto mt-4"/>
         </div>
+        
         <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={10}
@@ -53,19 +58,34 @@ function OngCarousel() {
         >
 
             <SwiperSlide>
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-16 px-[4%]">
-                        {ongs.map((logo, index) => (
-                            <img key={index} src={logo} alt={`ONG ${index + 1}`} className="cursor-pointer h-60 mx-auto"/>
-                        ))}
-                    </div>
-                </SwiperSlide>
+                <div className={slideStyle}>
+                    {ongs.map((logo, index) => (
+                        <img key={index} src={logo} alt={`ONG ${index + 1}`} className={imageStyle}/>
+                    ))}
+                </div>
+            </SwiperSlide>
 
-                <SwiperSlide>
-                    <div className="text-center text-4xl">Slide Teste</div>
-                </SwiperSlide>
+            <SwiperSlide>
+                <div className={slideStyle}>
+                    {ongs.map((logo, index) => (
+                        <img key={index} src={logo} alt={`ONG ${index + 1}`} className={imageStyle}/>
+                    ))}
+                </div>
+            </SwiperSlide>
 
-            </Swiper>
+            <SwiperSlide>
+                <div className={slideStyle}>
+                    {ongs.map((logo, index) => (
+                        <img key={index} src={logo} alt={`ONG ${index + 1}`} className={imageStyle}/>
+                    ))}
+                </div>
+            </SwiperSlide>
+
+
+        </Swiper>
+
     </section>
+
     );
 }
 
