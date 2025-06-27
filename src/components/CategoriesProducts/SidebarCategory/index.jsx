@@ -16,17 +16,17 @@ function SidebarCategory({id}) {
       <StyledLine />
       <Link to={`/app/categories/0`}>
         <StyledCategory onClick={() => setIsSelect('0')} isSelected={isSelected === '0'}>
-          Artesanato e Produtos Manuais
+          Artesanato e Produtos
         </StyledCategory>
       </Link>
       <Link to={`/app/categories/1`}>
         <StyledCategory onClick={() => setIsSelect('1')} isSelected={isSelected === '1'}>
-          Alimentos e Bebidas Artesanais
+          Alimentos e Bebidas
         </StyledCategory>
       </Link>
       <Link to={`/app/categories/2`}>
         <StyledCategory onClick={() => setIsSelect('2')} isSelected={isSelected === '2'}>
-          Roupas e Acessórios Personalizados
+          Roupas e Acessórios
         </StyledCategory>
       </Link>
       <Link to={`/app/categories/3`}>

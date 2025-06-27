@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledMainContainer = styled.div`
-    width: 350px;
+    min-width: 300px;
     max-height: 100vh;
     background-color: #dfebf0;
     padding-left: 40px;
@@ -21,4 +21,5 @@ export const StyledCategory = styled.p`
     color: ${(props) => (props.isSelected ? "#0B236D" : "")};
     margin: 15px 7px;
     cursor: pointer;
+    padding-right: 40px;
 `;

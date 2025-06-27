@@ -88,9 +88,9 @@ const Categories = () => {
   ]
   const { id } = useParams();
   const mapping = [
-    'Artesanatos e Produtos Manuais',
+    'Artesanato e Produtos',
     'Alimentos e Bebidas',
-    'Roupas e Acessórios Personalizados',
+    'Roupas e Acessórios',
     'Arte e Cultura',
     'Produtos Sustentáveis',
     'Produtos de Higiene e Cosméticos Naturais',
