@@ -45,14 +45,21 @@ a:hover, a:active { text-decoration: none; color:#000 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
+  font-size: 48px !important;
+  font-weight: 900;
   color: black !important;
 }
 
-.swiper-pagination-bullet,
-.swiper-pagination-bullet-active {
-  background: rgb(0, 0, 255) !important;
+.swiper-pagination-bullet {
+  margin: 0 10px !important;
+  opacity: 1 !important;
+  width: 14px !important;
+  height: 14px !important;
+  background: white !important;
+  border: 1px solid black !important;
 }
 
-.swiper-pagination {
-  bottom: -7px !important;
+.swiper-pagination-bullet-active {
+  background: #009FE3 !important;
+  border: 1px solid black;
 }
