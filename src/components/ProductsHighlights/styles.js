@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const SectionContainer = styled.section`
-  padding: 24px;
+  padding: 30px;
   display: flex;
   justify-content: center;
 `;
 
 export const MainContentContainer = styled.div`
-    width: 1076px;
-    max-width: 100%;
+  width: 1400px;
+  max-width: 100%;
 `;
 
 export const TitleBar = styled.div`
@@ -35,7 +35,8 @@ export const TitleText = styled.h2`
 `;
 
 export const ProductsFlexContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 `;

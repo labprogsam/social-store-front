@@ -49,6 +49,7 @@
   color: #000;
   font-weight: 500;
   padding: 8px;
+  cursor: pointer;
 }
 
 .navLink:hover {

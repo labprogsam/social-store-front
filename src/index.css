@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   margin: 0;
 }
@@ -35,7 +35,7 @@ text-decoration: none;
 }
 
 .MuiInputBase-input, .MuiOutlinedInput-input {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
 }
 
 a:visited { text-decoration: none; color:#000; }
