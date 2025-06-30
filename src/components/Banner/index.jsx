@@ -1,10 +1,11 @@
 
 import homeBanner from '../../assets/homeBanner/homeBanner.png';
 
-function HomeBanner() {
+function HomeBanner({ref}) {
     return (
         <section 
             className="relative h-[500px] flex items-center"
+            ref={ref}
             style={{
                 backgroundImage: `url(${homeBanner})`,
                 backgroundSize: 'cover',

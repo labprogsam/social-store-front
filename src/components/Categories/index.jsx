@@ -1,7 +1,7 @@
 
-function Categories() {
+function Categories({ref}) {
     return (
-        <div>Monte as categorias aqui</div>
+        <div ref={ref}>Monte as categorias aqui</div>
     )
 }
 

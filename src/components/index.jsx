@@ -6,6 +6,7 @@ import Categories from './Categories';
 import ProductsHighlights from './ProductsHighlights';
 import ProductCategory from './ProductCategory';
 import Footer from './Footer';
+import "@fontsource/inter/700.css";
 
 export {
     GlobalAlert,
