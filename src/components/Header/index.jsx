@@ -6,7 +6,15 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 
-function Header() {
+function Header({ scrollTargets }) {
+
+  const scrollTo = (ref) => {
+    if (ref.current) {
+      const y = ref.current.getBoundingClientRect().top + window.pageYOffset - 50;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -33,16 +41,16 @@ function Header() {
         </Paper>
 
         <nav className={styles.nav}>
-          <a href="#" className={styles.navLink}>
+          <a onClick={() => scrollTo(scrollTargets.secao1Ref)} className={styles.navLink}>
             Home
           </a>
-          <a href="#" className={styles.navLink}>
+          <a onClick={() => scrollTo(scrollTargets.secao2Ref)} className={styles.navLink}>
             Produtos
           </a>
-          <a href="#" className={styles.navLink}>
+          <a onClick={() => scrollTo(scrollTargets.secao3Ref)} className={styles.navLink}>
             Categorias
           </a>
-          <a href="#" className={styles.navLink}>
+          <a onClick={() => scrollTo(scrollTargets.secao4Ref)} className={styles.navLink}>
             Ongs
           </a>
         </nav>

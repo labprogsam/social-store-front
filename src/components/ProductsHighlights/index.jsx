@@ -8,10 +8,10 @@ import {
   ProductsFlexContainer,
 } from './styles.js';
 
-function ProductsHighlights() {
+function ProductsHighlights({ref}) {
 
   return (
-    <SectionContainer>
+    <SectionContainer ref={ref}>
       <MainContentContainer>
         <TitleBar>
           <TitleText>

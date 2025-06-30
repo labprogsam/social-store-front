@@ -1,8 +1,8 @@
 
-function OngCarousel() {
+function Banner(handleScroll, ref) {
     return (
-        <div>Monte o banner aqui</div>
+        <div ref={ref}>Monte o banner aqui</div>
     )
 }
 
-export default OngCarousel;
+export default Banner;

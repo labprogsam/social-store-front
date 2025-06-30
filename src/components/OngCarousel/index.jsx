@@ -27,9 +27,10 @@ const slideStyle =
 const imageStyle = "cursor-pointer h-auto sm:h-32 max-w-[80%] mx-auto py-16";
 
 // Componente OngCarousel que renderiza o carrossel de ONGs
-function OngCarousel() {
+function OngCarousel({ ref }) {
   return (
     <section
+      ref={ref}
       className="p-14 relative"
       style={{
         // Definindo o background do carrossel com a imagem importada
