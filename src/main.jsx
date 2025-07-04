@@ -6,7 +6,7 @@ import App from './App.jsx'
 
 const theme = createTheme({
   typography: {
-    fontFamily: "Montserrat, sans-serif",
+    fontFamily: "Poppins, sans-serif",
     button: {
       textTransform: 'none'
     }
@@ -20,7 +20,7 @@ const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: `
         @font-face {
-          font-family: "Montserrat, sans-serif";
+          font-family: "Poppins, sans-serif";
           font-style: normal;
           font-weight: 400;
         }

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   margin: 0;
 }
@@ -35,10 +35,31 @@ text-decoration: none;
 }
 
 .MuiInputBase-input, .MuiOutlinedInput-input {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
 }
 
 a:visited { text-decoration: none; color:#000; }
 a:hover { text-decoration: none; color:#000; }
 a:focus { text-decoration: none; color:#000; }
 a:hover, a:active { text-decoration: none; color:#000 }
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 48px !important;
+  font-weight: 900;
+  color: black !important;
+}
+
+.swiper-pagination-bullet {
+  margin: 0 10px !important;
+  opacity: 1 !important;
+  width: 14px !important;
+  height: 14px !important;
+  background: white !important;
+  border: 1px solid black !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #009FE3 !important;
+  border: 1px solid black;
+}
