@@ -1,21 +1,25 @@
 .categories-container {
   padding: 20px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .categories-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
+  max-width: 1400px;
+  width: 100%;
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .category-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer; /* Corrigido de 'center' para 'pointer' */
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
@@ -26,15 +30,14 @@
 .image-container {
   position: relative;
   display: inline-block;
+  padding: 10px;
 }
 
 .category-item img {
   width: 400px;
   height: 200px;
   object-fit: cover;
-  border-radius: 10px;
   background: #ffffff;
-  padding: 10px;
   display: block;
 }
 
@@ -45,16 +48,16 @@
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
-  width: 100%;
+  width: 80%;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .image-text h3 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
 }
 
 .image-text p {
-  font-size: 1rem;
+  font-size: 0.8rem;
   margin: 0;
 }

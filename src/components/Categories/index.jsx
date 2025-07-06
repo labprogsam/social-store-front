@@ -1,5 +1,4 @@
-import React from "react";
-import './Categories.css';
+import './categories.css';
 import categoria1 from "../../assets/categoriesI/artesanato.png";
 import categoria2 from "../../assets/categoriesI/alimentos.png";
 import categoria3 from "../../assets/categoriesI/roupas.png";
