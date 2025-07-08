@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from "./styles.module.css";
 import logo from "../../assets/bora-impactar.svg";
 import Paper from "@mui/material/Paper";
@@ -54,9 +55,9 @@ function Header({ scrollTargets }) {
             Ongs
           </a>
         </nav>
-        <button type="button" className={styles.loginButton}>
+        <Link to="/app/login" className={styles.loginButton}>
           Login Ong
-        </button>
+        </Link>
       </div>
     </header>
   );

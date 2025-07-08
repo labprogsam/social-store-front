@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, useRouteMatch, Redirect, Route } from 'react-router-dom';
 
-import {CategoriesView, HomeView, ProductView, OngView} from '../views';
+import {CategoriesView, HomeView, ProductView, OngView, Login} from '../views';
 
 // Public routes, everyone can see this views
 const PublicRoutes = () => {
@@ -13,6 +13,7 @@ const PublicRoutes = () => {
       <Route path={`${path}/categories`} component={CategoriesView} />
       <Route path={`${path}/ong`} component={OngView} />
       <Route path={`${path}/product`} component={ProductView} />
+      <Route path={`${path}/login`} component={Login} />
 
       {/* if not find, go to home */}
       <Redirect to={`${path}/home`} component={HomeView} />
