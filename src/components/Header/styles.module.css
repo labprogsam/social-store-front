@@ -69,4 +69,9 @@
   height: 34px;
   border-radius: 4px;
   cursor: pointer;
+  outline: none;
+}
+
+a:visited {
+  color: white;
 }
