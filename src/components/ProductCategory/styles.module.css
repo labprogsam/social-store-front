@@ -8,17 +8,17 @@
     font-family: "Poppins", sans-serif;
 }
 
-#imagem_principal {
-    width: 304px;
-    height: 208px;
-    object-fit: cover;
-}
-
 .imagens {
     width: 304px;
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+#imagem_principal {
+    width: 304px;
+    height: 208px;
+    object-fit: cover;
 }
 
 .thumbnail_container {
