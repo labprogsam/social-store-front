@@ -35,21 +35,12 @@ function ProductCategory() {
                     ))}
                 </div>
             </div>
+            
             <div className={styles.infos_direita}>
                 <div className={styles.infos_produto}>
-                    <h1>
-                        <strong>
-                            {data.title}
-                        </strong>
-                    </h1>
-                    <h2>
-                        <strong>
-                            R$ {data.price},00
-                        </strong>
-                    </h2>
-                    <p className={styles.description}>
-                        {data.description}
-                    </p>
+                    <h1>{data.title.toUpperCase()}</h1>
+                    <h2>R$ {data.price.toFixed(2).replace('.', ',')}</h2>
+                    <p className={styles.description}>{data.description}</p>
                     <p className={styles.gray_text}>
                         Feito carinhosamente por{' '}
                         <a href={`/ongs/${data.ong_id}`} className={styles.ong_link}>
@@ -57,6 +48,8 @@ function ProductCategory() {
                         </a>
                     </p>
                 </div>
+                
+                {/* Container dos botões - agora separado */}
                 <div className={styles.purchaseControls}>
                     <button 
                         className={styles.quantityMinus} 
@@ -66,7 +59,7 @@ function ProductCategory() {
                         -
                     </button>
                     <button className={styles.buyButton}>
-                        Comprar {quantity} uni.
+                        COMPRAR {quantity} UNI.
                     </button>
                     <button 
                         className={styles.quantityPlus} 
