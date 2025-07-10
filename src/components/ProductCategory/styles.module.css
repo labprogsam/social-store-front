@@ -1,32 +1,157 @@
-.infos_esquerda {
+.infos {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
-.infos_verticais {
+/* Área da imagem */
+.imagens {
+    width: 416px;
     display: flex;
     flex-direction: column;
+    gap: 15px;
+}
+
+#imagem_principal {
+    width: 100%;
+    height: 324px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.thumbnail_container {
+    display: flex;
+    justify-content: space-between;
     gap: 10px;
 }
 
-.infos_verticais h1 {
-    font-size: 1.5rem;
-    margin: 0;
-    font-weight: bold;
-    color: #000000;
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
 }
 
-.infos_verticais h2 {
-    font-size: 1.0rem;
+.thumbnail.active {
+    border-color: #13a6e4;
+}
+
+/* Área de informações */
+.infos_direita {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 324px;
+    justify-content: space-between;
+}
+
+.infos_produto {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.infos_produto h1 {
+    font-size: 24px;
+    font-weight: 700;
     margin: 0;
-    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.infos_produto h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
     color: #13a6e4;
 }
 
 .description {
-    max-width: 500px;
-    text-align: justify;
-    overflow-wrap: break-word;
-    hyphens: auto;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    color: #333;
+}
+
+.gray_text {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+.ong_link {
+    color: #1a5e8d;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.ong_link:hover {
+    text-decoration: underline;
+}
+
+/* Controles de compra */
+.purchaseControls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.quantityControls {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.quantityButton {
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantityButton:hover {
+    background: #e0e0e0;
+}
+
+.quantityButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.quantityDisplay {
+    padding: 0 15px;
+    min-width: 60px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.buyButton {
+    flex: 1;
+    height: 40px;
+    background: #2E90FA;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.buyButton:hover {
+    background: #1a7feb;
 }
