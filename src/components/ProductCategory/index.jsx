@@ -56,10 +56,10 @@ function ProductCategory() {
                         onClick={() => quantity > 1 && setQuantity(quantity - 1)}
                         disabled={quantity <= 1}
                     >
-                        -
+                        —
                     </button>
                     <button className={styles.buyButton}>
-                        COMPRAR {quantity} UNI.
+                        Comprar {quantity} uni.
                     </button>
                     <button 
                         className={styles.quantityPlus} 
