@@ -10,14 +10,14 @@
 }
 
 #imagem_principal {
-    width: 416px;
-    height: 324px;
+    width: 304px;
+    height: 208px;
     object-fit: cover;
 }
 
 /* Área da imagem (mantido igual) */
 .imagens {
-    width: 416px;
+    width: 304px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -55,13 +55,13 @@
     display: flex;
     flex-direction: column;
     object-fit: cover;
-    height: 324px;
+    height: 208px;
     justify-content: space-between; /* Espaço entre elementos */
     padding-bottom: 20px;
 }
 
 .infos_produto h1 {
-    font-size: 2.5rem;
+    font-size: 20px;
     font-weight: 700;
     margin: 0;
     color: #000;
@@ -69,14 +69,14 @@
 }
 
 .infos_produto h2 {
-    font-size: 2.0rem;
+    font-size: 14px;
     font-weight: 700;
     margin: 0;
     color: #13a6e4;
 }
 
 .description {
-    font-size: 1.2rem;
+    font-size: 16px;
     line-height: 1.5;
     margin: 0;
     color: #333;
