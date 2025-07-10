@@ -47,6 +47,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Distribui o espaço */
+    max-width: 500px;
 }
 
 /* Seção de informações do produto - MODIFICADO */
@@ -60,7 +61,7 @@
 }
 
 .infos_produto h1 {
-    font-size: 24px;
+    font-size: 2.5rem;
     font-weight: 700;
     margin: 0;
     color: #000;
@@ -68,14 +69,14 @@
 }
 
 .infos_produto h2 {
-    font-size: 20px;
+    font-size: 2.0rem;
     font-weight: 700;
     margin: 0;
     color: #13a6e4;
 }
 
 .description {
-    font-size: 16px;
+    font-size: 1.2rem;
     line-height: 1.5;
     margin: 0;
     color: #333;
@@ -88,10 +89,9 @@
 }
 
 .ong_link {
-    color: #1a5e8d;
+    color: #1a5e8d; /* Azul escuro acinzentado */
     font-weight: 600;
     font-style: italic;
-    text-decoration: none;
 }
 
 .ong_link:hover {
