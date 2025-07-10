@@ -58,24 +58,21 @@ function ProductCategory() {
                     </p>
                 </div>
                 <div className={styles.purchaseControls}>
-                    <div className={styles.quantityControls}>
-                        <button 
-                            className={styles.quantityButton} 
-                            onClick={() => quantity > 1 && setQuantity(quantity - 1)}
-                            disabled={quantity <= 1}
-                        >
-                            -
-                        </button>
-                        <span className={styles.quantityDisplay}>{quantity} uni.</span>
-                        <button 
-                            className={styles.quantityButton} 
-                            onClick={() => setQuantity(quantity + 1)}
-                        >
-                            +
-                        </button>
-                    </div>
+                    <button 
+                        className={styles.quantityMinus} 
+                        onClick={() => quantity > 1 && setQuantity(quantity - 1)}
+                        disabled={quantity <= 1}
+                    >
+                        -
+                    </button>
                     <button className={styles.buyButton}>
                         Comprar {quantity} uni.
+                    </button>
+                    <button 
+                        className={styles.quantityPlus} 
+                        onClick={() => setQuantity(quantity + 1)}
+                    >
+                        +
                     </button>
                 </div>
             </div>

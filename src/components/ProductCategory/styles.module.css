@@ -16,10 +16,9 @@
 }
 
 #imagem_principal {
-    width: 100%;
+    width: 416px;
     height: 324px;
     object-fit: cover;
-    border-radius: 8px;
 }
 
 .thumbnail_container {
@@ -32,7 +31,6 @@
     width: 60px;
     height: 60px;
     object-fit: cover;
-    border-radius: 4px;
     cursor: pointer;
     border: 2px solid transparent;
 }
