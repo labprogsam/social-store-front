@@ -49,7 +49,6 @@ function ProductCategory() {
                     </p>
                 </div>
                 
-                {/* Container dos botões - agora separado */}
                 <div className={styles.purchaseControls}>
                     <button 
                         className={styles.quantityMinus} 

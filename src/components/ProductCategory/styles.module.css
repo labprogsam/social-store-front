@@ -14,7 +14,6 @@
     object-fit: cover;
 }
 
-/* Área da imagem (mantido igual) */
 .imagens {
     width: 304px;
     display: flex;
@@ -45,17 +44,16 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribui o espaço */
+    justify-content: space-between;
     max-width: 500px;
 }
 
-/* Seção de informações do produto - MODIFICADO */
 .infos_produto {
     display: flex;
     flex-direction: column;
     object-fit: cover;
     height: 208px;
-    justify-content: space-between; /* Espaço entre elementos */
+    justify-content: space-between;
 }
 
 .infos_produto h1 {
@@ -87,7 +85,7 @@
 }
 
 .ong_link {
-    color: #1a5e8d; /* Azul escuro acinzentado */
+    color: #1a5e8d;
     font-weight: 600;
     font-style: italic;
 }
@@ -96,13 +94,12 @@
     text-decoration: underline;
 }
 
-/* Controles de compra - MODIFICADO */
 .purchaseControls {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-top: auto; /* Garante que fique na base */
-    padding-top: 20px; /* Espaçamento das informações */
+    margin-top: auto;
+    padding-top: 20px;
 }
 
 .quantityControls {
@@ -187,11 +184,11 @@
     align-items: center;
     justify-content: center;
     padding: 0 15px;
-    border: none; /* Adicionei para garantir que não haja borda */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra azul sutil */
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .buyButton:hover {
-    background: #0f8fd8; /* Tom de azul um pouco mais escuro no hover */
+    background: #0f8fd8;
     border-color: #0f8fd8;
 }
