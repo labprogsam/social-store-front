@@ -7,6 +7,9 @@ import {
   ProductsHighlights,
   Footer
 } from '../../components'
+import {
+  StyledMainContent
+} from './styles';
 
 function Home() {
   const secao1Ref = useRef(null);
@@ -15,14 +18,12 @@ function Home() {
   const secao4Ref = useRef(null);
 
   return (
-    <div>
-      <Header scrollTargets={{ secao1Ref, secao2Ref, secao3Ref, secao4Ref }} />
+    <StyledMainContent>
       <Banner id="banner" ref={secao1Ref} />
       <Categories id="categories" ref={secao2Ref} />
       <ProductsHighlights id="product-hightlight" ref={secao3Ref} />
       <OngCarousel id="ong-carousel" ref={secao4Ref} />
-      <Footer />
-    </div>
+    </StyledMainContent>
   )
 }
 
