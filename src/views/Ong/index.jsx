@@ -1,5 +1,7 @@
+import { ProductList } from '../../components';
+
 const Ong = () => {
-    return (<div>Ong</div>)
+    return <ProductList/>
 }
 
 export default Ong;

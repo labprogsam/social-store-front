@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, useRouteMatch, Redirect, Route } from 'react-router-dom';
 
 import {CategoriesView, HomeView, ProductView, OngView} from '../views';
+import Product from '../views/Product';
 
 // Public routes, everyone can see this views
 const PublicRoutes = () => {
