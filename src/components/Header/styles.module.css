@@ -20,11 +20,20 @@
   justify-content: space-between;
 }
 
+.left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 800px;
+  width: 100%;
+}
+
 .logo {
+  cursor: pointer;
   display: flex;
   align-items: center;
   flex-direction: row;
-  margin-right: 30px;
+  margin-right: 40px;
 }
 
 /*campo de busca*/
@@ -70,8 +79,4 @@
   border-radius: 4px;
   cursor: pointer;
   outline: none;
-}
-
-a:visited {
-  color: white;
 }
