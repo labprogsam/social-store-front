@@ -1,10 +1,10 @@
-import { config, backApi } from './api';
+import api from "./api";
 
 export async function getUser() {
   // return false
-  return backApi.get('user/', config());
+  return api.get('user/');
 }
 
 export async function createUser(body) {
-  return backApi.post('user/',body, config());
+  return api.post('user/',body);
 }

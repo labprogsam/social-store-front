@@ -1,21 +1,50 @@
-import { Switch, Redirect, Route } from 'react-router-dom';
-import Cookies from 'js-cookie';
-
-import PrivateRoutes from './private.routes';
-import PublicRoutes from './public.routes';
-import CredentialsVerifier from './CredentialsVerifier';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { CategoriesView, HomeView, ProductView, OngView, Login, OngProduct } from '../views';
+import {
+  Base,
+  ScrollToTop
+} from '../components';
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ProtectedRoute from './ProtectRoute';
 
 const InternalRoutes = () => {
-  const cookies = Cookies.get();
+  const queryClient = new QueryClient();
 
-  // Checks if user is logged in or not. This information is stored in cookies.
   return (
-    <Switch>
-      <CredentialsVerifier path="/auth" component={PrivateRoutes} />
-      <Route path="/app" component={PublicRoutes} />
-      {/* <Redirect to={cookies?.access_token ? '/app' : '/auth'} /> */}
-      <Redirect to={false ? '/auth/ong' : '/app'} />
-    </Switch>
+    <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
+      <Router basename="/app">
+        <ScrollToTop />
+        <Routes>
+          <Route element={<Base />}>
+            <Route index element={<Navigate replace to="home" />} />
+            <Route path="home" element={<HomeView />} />
+            <Route path="produtos" element={<ProductView />} />
+            <Route path="categories/:id" element={<CategoriesView />} />
+          </Route>
+          <Route path="/login" element={<Login />} />
+          <Route
+              path="ong"
+              element={
+                <ProtectedRoute>
+                  <Base />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Navigate replace to={"home"} />} />
+              <Route path="home" element={<div>ong home</div>} />
+              <Route path="criar-produto" element={<OngProduct />} />
+            </Route>
+          <Route path="*" element={<div>Not found</div>} />
+        </Routes>
+      </Router>
+    </QueryClientProvider>
   );
 };
 

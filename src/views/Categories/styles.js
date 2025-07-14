@@ -1,133 +1,60 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const MainContainer = styled.div`
+export const StyledMainContainer = styled.div`
+  width: 100%;
+`;
+
+export const Pathing = styled.p`
+  color: rgba(0, 0, 0, 0.25);
+  margin: 13px 0;
+  font-size: 13px;
+  width: 100%;
+  padding-left: 20px;
+
+  span {
+    color: #1E1E1E;
+  }
+`;
+
+export const StyledRow = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: row;
-  color: #ffffff;
-  height: 100vh;
-  box-sizing: border-box;
-  width: 100vw;
 `;
 
-const ImageSide = styled.div`
-  background-color: #333333;
-  width: 50%;
-  height: 100%;
+export const StyledListProducts = styled.div`
+  max-height: 100vh;
+  padding: 0 50px 20px 50px;
+  overflow-y: scroll;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  width: 100%;
 
-  .image-content {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  &::-webkit-scrollbar {
+    width: 16px;
+    padding-right: 8px; /* espaço para a barra */
   }
 
-  img {
-    width: 50%;
-    max-width: 560px;
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 4px;
+    border: 5px solid #FFF;
   }
-`;
 
-const FormSide = styled.div`
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-`;
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    padding-right: 8px; /* espaço para a barra */
+  }
 
-const FormContainer = styled.form`
-  border: 1px solid #00000080;
-  padding: 30px 50px;
-  width: 80%;
-  box-sizing: border-box;
-  color: #000;
-  max-width: 600px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-direction: column;
-  border-radius: 7px;
-
-  #subtitle-main {
-    margin-top: 10px;
-    color: #333333;
-    font-size: 24px;
+  #main-title {
+    margin-bottom: 20px;
+    font-size: 20px;
     font-weight: 600;
-  }
-
-  h1 {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 36px;
-    letter-spacing: -1.5%;
-    margin-bottom: 30px;
-  }
-
-  #name {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-    #first-name {
-      margin-right: 15px;
-      width: 100%;
-    }
-
-    #last-name {
-      margin-left: 15px;
-      width: 100%;
-    }
   }
 
   .MuiInputBase-root {
     font-family: "Poppins", "sans-serif" !important;
     font-size: 16px !important;
     border-radius: 8px !important;
-  }
-
-  #actions {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 20px;
-    width: 100%;
-
-    p {
-      font-size: 14px;
-    }
-
-    #entrar {
-      background-color: #1e3a8a;
-      color: #fff;
-      border-radius: 8px;
-      padding: 8px 0;
-    }
-
-    #cadastre {
-      margin-top: 15px;
-      background-color: transparent;
-      border: 1px solid #b2b2b2;
-      color: #4c4c4c;
-    }
-
-    a {
-      cursor: pointer;
-      text-decoration: underline;
-      font-size: 14px;
-      margin-top: 25px;
-    }
-
-    #register-button {
-      width: 100%;
-      margin-top: 0;
-    }
   }
 `;
 
@@ -137,4 +64,4 @@ const ErrorSpan = styled.span`
   font-size: 11px;
 `;
 
-export { MainContainer, ImageSide, FormSide, FormContainer, ErrorSpan };
+export { ErrorSpan };

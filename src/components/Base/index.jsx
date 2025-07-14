@@ -1,14 +1,15 @@
 import {
   StyledMainContainer
 } from './styles';
+import { Outlet } from 'react-router-dom';
 import Header from '../Header';
 import Footer from '../Footer';
 
-function Base({ children }) {
+function Base() {
   return (
     <StyledMainContainer>
       <Header />
-      {children}
+      <Outlet />
       <Footer />
     </StyledMainContainer>
   )
