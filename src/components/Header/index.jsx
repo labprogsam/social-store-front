@@ -41,7 +41,7 @@ function Header() {
             </IconButton>
           </Paper>
         </div>
-        <Link to="/app/login" className={styles.loginButton}>
+        <Link to="/login" className={styles.loginButton}>
           Login Ong
         </Link>
       </div>
