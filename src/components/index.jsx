@@ -7,6 +7,8 @@ import ProductsHighlights from './ProductsHighlights';
 import ProductCategory from './ProductCategory';
 import Footer from './Footer';
 import SidebarCategory from './CategoriesProducts/SidebarCategory';
+import Base from './Base';
+import ImageDropZone from './DragAndDrop';
 
 export {
     GlobalAlert,
@@ -17,5 +19,7 @@ export {
     ProductCategory,
     ProductsHighlights,
     Footer,
-    SidebarCategory
+    SidebarCategory,
+    Base,
+    ImageDropZone
 }

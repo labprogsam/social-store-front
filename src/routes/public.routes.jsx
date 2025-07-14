@@ -1,7 +1,6 @@
-import React from 'react';
 import { Switch, useRouteMatch, Redirect, Route } from 'react-router-dom';
 
-import {CategoriesView, HomeView, ProductView, OngView} from '../views';
+import {CategoriesView, HomeView, ProductView, OngView, Login, OngProduct} from '../views';
 
 // Public routes, everyone can see this views
 const PublicRoutes = () => {
@@ -9,10 +8,12 @@ const PublicRoutes = () => {
 
   return (
     <Switch>
-      <Route path={`${path}/home`} component={HomeView} />
+      <Route exact path={`${path}/home`} component={HomeView} />
       <Route path={`${path}/categories/:id`} component={CategoriesView} />
-      <Route path={`${path}/ong`} component={OngView} />
-      <Route path={`${path}/product`} component={ProductView} />
+      <Route exact path={`${path}/ong/produtos/criar`} component={OngProduct} />
+      <Route exact path={`${path}/ong`} component={OngView} />
+      <Route exact path={`${path}/produtos`} component={ProductView} />
+      <Route exact path={`${path}/login`} component={Login} />
 
       {/* if not find, go to home */}
       <Redirect to={`${path}/home`} component={HomeView} />
