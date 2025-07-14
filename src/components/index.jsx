@@ -6,6 +6,8 @@ import Categories from './Categories';
 import ProductsHighlights from './ProductsHighlights';
 import ProductCategory from './ProductCategory';
 import Footer from './Footer';
+import Base from './Base';
+import ImageDropZone from './DragAndDrop';
 import "@fontsource/inter/700.css";
 
 export {
@@ -16,5 +18,7 @@ export {
     Categories,
     ProductCategory,
     ProductsHighlights,
-    Footer
+    Footer,
+    Base,
+    ImageDropZone
 }
