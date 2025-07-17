@@ -142,7 +142,7 @@ A plataforma Social Store encontra-se em desenvolvimento ativo. Novas funcionali
     <tr>
       <td align="center">
         <img src="https://avatars.githubusercontent.com/u/73610632?v=4" width="100px" alt="Gryghor Camonni"/><br/>
-        <b>Pessoa 1</b>
+        <b>Gryghor Camonni</b>
       </td>
       <td align="center">
         <img src="https://avatars.githubusercontent.com/u/155683708?v=4" width="100px" alt="Lucas Cabral"/><br/>
