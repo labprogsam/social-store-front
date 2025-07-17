@@ -3,21 +3,21 @@
 .infos {
     display: flex;
     flex-direction: row;
-    gap: 40px;
+    gap: 52px;
     align-items: flex-start;
     font-family: "Poppins", sans-serif;
 }
 
 .imagens {
-    width: 304px;
+    width: 416px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 21px;
 }
 
 #imagem_principal {
-    width: 304px;
-    height: 208px;
+    width: 416px;
+    height: 324px;
     object-fit: cover;
 }
 
@@ -45,15 +45,16 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-width: 500px;
+    max-width: 608px;
 }
 
 .infos_produto {
     display: flex;
     flex-direction: column;
     object-fit: cover;
-    height: 208px;
-    justify-content: space-between;
+    padding-top: 46px;
+    height: 324px;
+    gap: 36px;
 }
 
 .infos_produto h1 {
@@ -65,23 +66,27 @@
 }
 
 .infos_produto h2 {
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: 600;
     margin: 0;
     color: #13a6e4;
 }
 
 .description {
+    width: 608px;
+    height: 95px;
+    font-weight: 400;
     font-size: 16px;
-    line-height: 1.5;
-    margin: 0;
-    color: #333;
+    line-height: 24px;
 }
 
 .gray_text {
-    font-size: 14px;
-    color: #666;
     margin: 0;
+    width: 421px;
+    height: 31px;
+    color: rgba(30, 30, 30, 0.54);
+    font-size: 14px;
+    line-height: 21px;
 }
 
 .ong_link {

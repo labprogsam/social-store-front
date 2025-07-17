@@ -1,7 +1,8 @@
-import styles from './styles.module.css';
+import styles_category from './ProductCategory.module.css';
+import styles_product from './Product.module.css'
 import { useState } from 'react';
 
-function ProductCategory() {
+function ProductCategory({ isCategoryView = false }) {
     const data = {
         "id": 12312,
         "title": "Boneca de Pano",
@@ -19,49 +20,107 @@ function ProductCategory() {
     const [activeImage, setActiveImage] = useState(data.images[0]);
     const [quantity, setQuantity] = useState(1);
 
-    return (
-        <div className={styles.infos}>
-            <div className={styles.imagens}>
-                <img src={activeImage} id={styles.imagem_principal} />
+    if (!isCategoryView) {
+        return (
+            <div className={styles_product.infos}>
+                <div className={styles_product.imagens}>
+                    <img src={activeImage} id={styles_product.imagem_principal} />
+                    
+                    <div className={styles_product.thumbnail_container}>
+                        {data.images.map((image, index) => (
+                            <img 
+                                key={index} 
+                                src={image}
+                                className={`${styles_product.thumbnail} ${activeImage === image ? styles_product.active : ''}`}
+                                onClick={() => setActiveImage(image)}
+                            />
+                        ))}
+                    </div>
+                </div>
                 
-                <div className={styles.thumbnail_container}>
+                <div className={styles_product.infos_direita}>
+                    <div className={styles_product.infos_produto}>
+                        <div>
+                            <h1>{data.title.toUpperCase()}</h1>
+                            <h2>R$ {data.price.toFixed(2).replace('.', ',')}</h2>
+                        </div>
+                        <div>
+                            <p className={styles_product.description}>{data.description}</p>
+                            <p className={styles_product.gray_text}>
+                                Feito carinhosamente por{' '}
+                                <a href={`/ongs/${data.ong_id}`} className={styles_product.ong_link}>
+                                    {data.ong}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div className={styles_product.purchaseControls}>
+                        <button 
+                            className={styles_product.quantityMinus} 
+                            onClick={() => quantity > 1 && setQuantity(quantity - 1)}
+                            disabled={quantity <= 1}
+                        >
+                            —
+                        </button>
+                        <button className={styles_product.buyButton}>
+                            Comprar {quantity} uni.
+                        </button>
+                        <button 
+                            className={styles_product.quantityPlus} 
+                            onClick={() => setQuantity(quantity + 1)}
+                        >
+                            +
+                        </button>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    return (
+        <div className={styles_category.infos}>
+            <div className={styles_category.imagens}>
+                <img src={activeImage} id={styles_category.imagem_principal} />
+                
+                <div className={styles_category.thumbnail_container}>
                     {data.images.map((image, index) => (
                         <img 
                             key={index} 
                             src={image}
-                            className={`${styles.thumbnail} ${activeImage === image ? styles.active : ''}`}
+                            className={`${styles_category.thumbnail} ${activeImage === image ? styles_category.active : ''}`}
                             onClick={() => setActiveImage(image)}
                         />
                     ))}
                 </div>
             </div>
             
-            <div className={styles.infos_direita}>
-                <div className={styles.infos_produto}>
+            <div className={styles_category.infos_direita}>
+                <div className={styles_category.infos_produto}>
                     <h1>{data.title.toUpperCase()}</h1>
                     <h2>R$ {data.price.toFixed(2).replace('.', ',')}</h2>
-                    <p className={styles.description}>{data.description}</p>
-                    <p className={styles.gray_text}>
+                    <p className={styles_category.description}>{data.description}</p>
+                    <p className={styles_category.gray_text}>
                         Feito carinhosamente por{' '}
-                        <a href={`/ongs/${data.ong_id}`} className={styles.ong_link}>
+                        <a href={`/ongs/${data.ong_id}`} className={styles_category.ong_link}>
                             {data.ong}
                         </a>
                     </p>
                 </div>
                 
-                <div className={styles.purchaseControls}>
+                <div className={styles_category.purchaseControls}>
                     <button 
-                        className={styles.quantityMinus} 
+                        className={styles_category.quantityMinus} 
                         onClick={() => quantity > 1 && setQuantity(quantity - 1)}
                         disabled={quantity <= 1}
                     >
                         —
                     </button>
-                    <button className={styles.buyButton}>
+                    <button className={styles_category.buyButton}>
                         Comprar {quantity} uni.
                     </button>
                     <button 
-                        className={styles.quantityPlus} 
+                        className={styles_category.quantityPlus} 
                         onClick={() => setQuantity(quantity + 1)}
                     >
                         +
