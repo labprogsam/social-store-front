@@ -22,37 +22,47 @@ export const Pathing = styled.p`
   }
 `;
 
-export const StyledBanner = styled.header`
-    width: 100%;
-    max-width: 1200px;
-    height: 300px;
-    background-image: url(${props => props.bannerImage});
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-    position: relative;
+export const StyledBanner = styled.div`
+  position: relative;
+  width: 100%;
+  height: 260px;
+  background-image: url(${props => props.bannerImage});
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 1rem;
 `;
 
+
 export const StyledAvatarContainer = styled.div`
-    position: absolute;
-    bottom: -75px;
-    left: 40px;
+  position: absolute;
+  left: 2rem;
+  bottom: -45px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid white;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const StyledLogo = styled.img`
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 5px solid white;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    object-fit: cover;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
 `;
+
 
 export const StyledContent = styled.div`
     width: 100%;
     max-width: 1200px;
-    margin-top: 100px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     padding: 0 20px;
@@ -64,28 +74,6 @@ export const StyledOngName = styled.h1`
     color: #333;
 `;
 
-export const StyledDescription = styled.p`
-    font-size: 16px;
-    color: #666;
-    line-height: 1.6;
-    margin-top: 10px;
-`;
-
-export const StyledProductsSection = styled.section`
-    width: 100%;
-    max-width: 1200px;
-    margin-top: 40px;
-    padding: 0 20px;
-    margin-bottom: 50px;
-
-    h2 {
-        font-size: 24px;
-        font-weight: 600;
-        margin-bottom: 20px;
-        border-bottom: 2px solid #eee;
-        padding-bottom: 10px;
-    }
-`;
 
 // Estilos para o modo de Edição
 export const StyledEditContainer = styled.div`
@@ -97,17 +85,15 @@ export const StyledEditContainer = styled.div`
 
 
 export const StyledActions = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    margin-bottom: 20px;
-
-    .finalize-button {
-        margin-right: auto;
-    }
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;       
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
 `;
+
 
 
 export const StyledForm = styled.div`
@@ -116,6 +102,7 @@ export const StyledForm = styled.div`
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     position: relative;
+    
 `;
 
 export const StyledBannerEditor = styled.div`
@@ -138,7 +125,7 @@ export const StyledAvatarEditor = styled.div`
     background-color: #fff;
     overflow: hidden;
     position: absolute;
-    top: 170px; // Posição sobreposta
+    top: 170px;
     left: 40px;
     z-index: 2;
 
@@ -146,3 +133,4 @@ export const StyledAvatarEditor = styled.div`
         border-radius: 50%;
     }
 `;
+

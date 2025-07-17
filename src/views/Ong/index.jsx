@@ -1,137 +1,153 @@
 import { useState } from "react";
 import { TextField, Button } from "@mui/material";
+import { CameraAlt, ErrorOutline } from "@mui/icons-material";
+
 import {
     StyledBanner,
     StyledContainer,
     StyledContent,
-    StyledDescription,
     StyledLogo,
     StyledOngName,
     Pathing,
-    StyledEditContainer,
-    StyledBannerEditor,
-    StyledAvatarEditor,
     StyledForm,
     StyledActions,
     StyledAvatarContainer
 } from "./styles";
-// Removido o import do ProductCategory que não é mais usado
-import { ImageDropZone } from '../../components'; 
 
-const initialOngData = {
-    name: "Instituto Dia melhor",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    logo: "../../assets/Ong/Boneca.png",
-    banner: "../../assets/Ong/hero.png"
+const dadosIniciaisOng = {
+    nome: "Instituto Dia melhor",
+    descricao: "",
+    logo: "ex: ../../assets/Ong/Logo.png",
+    banner: "ex: ../../assets/Ong/hero.png"
 };
 
 const Ong = () => {
-    const [hasPermission, setHasPermission] = useState(true);
+    const [temPermissao, setTemPermissao] = useState(true);
     const [cadastroFinalizado, setCadastroFinalizado] = useState(false);
-    const [isEditing, setIsEditing] = useState(false);
-    const [ongData, setOngData] = useState(initialOngData);
-    const [editedData, setEditedData] = useState(initialOngData);
+    const [editando, setEditando] = useState(false);
+    const [dadosOng, setDadosOng] = useState(dadosIniciaisOng);
+    const [dadosEditados, setDadosEditados] = useState(dadosIniciaisOng);
 
-    const handleEditToggle = () => {
-        if (isEditing) {
-            setOngData(editedData);
+    const alternarEdicao = () => {
+        if (editando) {
+            setDadosOng(dadosEditados);
         } else {
-            setEditedData(ongData);
+            setDadosEditados(dadosOng);
         }
-        setIsEditing(!isEditing);
+        setEditando(!editando);
     };
 
-    const handleCancel = () => {
-        setIsEditing(false);
-        setEditedData(ongData);
-    }
+    const cancelarEdicao = () => {
+        setEditando(false);
+        setDadosEditados(dadosOng);
+    };
 
-    const handleInputChange = (e) => {
+    const lidarMudancaInput = (e) => {
         const { name, value } = e.target;
-        setEditedData(prev => ({ ...prev, [name]: value }));
-    }
+        setDadosEditados(prev => ({ ...prev, [name]: value }));
+    };
 
+    const lidarUploadImagem = (e, campo) => {
+        const arquivo = e.target.files[0];
+        if (!arquivo) return;
 
-    if (!hasPermission || !isEditing) {
+        const leitor = new FileReader();
+        leitor.onloadend = () => {
+            setDadosEditados(prev => ({
+                ...prev,
+                [campo]: leitor.result
+            }));
+        };
+        leitor.readAsDataURL(arquivo);
+    };
+
+    if (!temPermissao || !editando) {
         return (
-             <StyledContainer>
-                {hasPermission && (
-                    <StyledActions>
-                        <Button variant="contained" onClick={handleEditToggle}>Editar Página</Button>
-                    </StyledActions>
-                )}
-                <Pathing>Home / Ongs / <b>{ongData.name}</b></Pathing>
-                <StyledBanner bannerImage={ongData.banner}>
+            <StyledContainer>
+              
+                <Pathing>Home / Ongs / <b>{dadosEditados.nome}</b></Pathing>
+
+                <StyledBanner bannerImage={dadosEditados.banner}>
+                    <Button
+                        variant="contained"
+                        sx={{ margin: "1rem", marginTop:"10%", color:"white" }}
+                        component="label"
+                    >
+                        Upload
+                        <input
+                            type="file"
+                            hidden
+                            accept="image/*"
+                            onChange={(e) => lidarUploadImagem(e, "banner")}
+                        />
+                    </Button>
+
                     <StyledAvatarContainer>
-                        <StyledLogo src={ongData.logo} alt="Logo da ONG" />
+                        <StyledLogo src={dadosEditados.logo} alt="Logo da ONG" />
+                        <Button
+                            variant="contained"
+                            sx={{
+                                position: "absolute",
+                                bottom: 0,
+                                right: 0,
+                                minWidth: "30px",
+                                height: "30px",
+                                borderRadius: "50%",
+                                backgroundColor: "#00B0FF",
+                                padding: 0,
+                                zIndex: 2
+                            }}
+                            component="label"
+                        >
+                            <CameraAlt fontSize="small" sx={{ color: "white" }} />
+                            <input
+                                type="file"
+                                hidden
+                                accept="image/*"
+                                onChange={(e) => lidarUploadImagem(e, "logo")}
+                            />
+                        </Button>
                     </StyledAvatarContainer>
                 </StyledBanner>
+                
+                <StyledActions style={{ justifyContent: "flex-end" }}>
+                    {!cadastroFinalizado && (
+                        <Button
+                            className="finalize-button"
+                            variant="outlined"
+                            color="error"
+                            startIcon={<ErrorOutline />}
+                        >
+                            Finalize seu cadastro!
+                        </Button>
+                    )}
+                </StyledActions>
+
                 <StyledContent>
-                    <StyledOngName>{ongData.name}</StyledOngName>
-                    <StyledDescription>{ongData.description}</StyledDescription>
+                    <StyledForm>
+                        <TextField
+                            label="Nome"
+                            name="nome"
+                            value={dadosEditados.nome}
+                            onChange={lidarMudancaInput}
+                            fullWidth
+                            margin="normal"
+                        />
+                        <TextField
+                            label="Descrição"
+                            name="descricao"
+                            value={dadosEditados.descricao}
+                            onChange={lidarMudancaInput}
+                            fullWidth
+                            multiline
+                            rows={6}
+                            margin="normal"
+                        />
+                    </StyledForm>
                 </StyledContent>
             </StyledContainer>
-        )
+        );
     }
-
-    return (
-        <StyledEditContainer>
-            <StyledActions>
-                {!cadastroFinalizado && (
-                    <Button 
-                        className="finalize-button"
-                        variant="outlined" 
-                        color="error"
-                    >
-                        Finalize seu cadastro!
-                    </Button>
-                )}
-                <Button variant="text" onClick={handleCancel}>Sair</Button>
-                <Button variant="contained" onClick={handleEditToggle}>Salvar</Button>
-            </StyledActions>
-
-            <StyledForm>
-                {/* Imagens agora são inseridas via URL */}
-                <TextField
-                    label="URL da Imagem do Banner"
-                    name="banner"
-                    value={editedData.banner}
-                    onChange={handleInputChange}
-                    fullWidth
-                    variant="outlined"
-                    margin="normal"
-                />
-                 <TextField
-                    label="URL da Imagem do Logo"
-                    name="logo"
-                    value={editedData.logo}
-                    onChange={handleInputChange}
-                    fullWidth
-                    variant="outlined"
-                    margin="normal"
-                />
-                
-                <TextField
-                    label="Nome"
-                    name="name"
-                    value={editedData.name}
-                    onChange={handleInputChange}
-                    fullWidth
-                    margin="normal"
-                />
-                <TextField
-                    label="Descrição"
-                    name="description"
-                    value={editedData.description}
-                    onChange={handleInputChange}
-                    fullWidth
-                    multiline
-                    rows={6}
-                    margin="normal"
-                />
-            </StyledForm>
-        </StyledEditContainer>
-    );
-}
+};
 
 export default Ong;
