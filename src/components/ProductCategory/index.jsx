@@ -1,6 +1,9 @@
 import styles_category from './ProductCategory.module.css';
-import styles_product from './Product.module.css'
+import styles_product from './Product.module.css';
 import { useState } from 'react';
+import botãoMais from '../../assets/ProductCategory/botão-mais.svg';
+import botãoMenos from '../../assets/ProductCategory/botão-menos.svg';
+import botãoMenosTransparente from '../../assets/ProductCategory/botão-menos-transparente.svg';
 import setaAzul from '../../assets/ProductCategory/botão-seta.svg';
 import carrinhoIcon from '../../assets/ProductCategory/carrinho-icon.svg';
 
@@ -22,17 +25,17 @@ function ProductCategory({ isCategoryView = false }) {
     const [activeImage, setActiveImage] = useState(data.images[0]);
     const [quantity, setQuantity] = useState(1);
 
-    if (!isCategoryView) {
+    if (isCategoryView) {
         return (
             <div className={styles_product.infos}>
                 <div className={styles_product.imagens}>
                     <img src={activeImage} id={styles_product.imagem_principal} />
-                    <div className={styles_product.thumbnail_container}>
+                    <div className={styles_product.imagens_menores}>
                         {data.images.map((image, index) => (
                             <img 
                                 key={index} 
                                 src={image}
-                                className={`${styles_product.thumbnail} ${activeImage === image ? styles_product.active : ''}`}
+                                className={`${styles_product.imagem_menor} ${activeImage === image ? styles_product.active : ''}`}
                                 onClick={() => setActiveImage(image)}
                             />
                         ))}
@@ -45,16 +48,16 @@ function ProductCategory({ isCategoryView = false }) {
                             <p className={styles_product.preço}>R$ {data.price.toFixed(2).replace('.', ',')}</p>
                         </div>
                         <div>
-                            <p className={styles_product.description}>{data.description}</p>
-                            <p className={styles_product.gray_text}>
+                            <p className={styles_product.descrição}>{data.description}</p>
+                            <p className={styles_product.texto_cinza}>
                                 Feito carinhosamente por{' '}
-                                <a href={`/ongs/${data.ong_id}`} className={styles_product.ong_link}>
-                                    {data.ong}
+                                <a href={`/ongs/${data.ong_id}`} className={styles_product.ong}>
+                                    {data.ong_id}
                                 </a>
                             </p>
                         </div>
                     </div>
-                    <div className={styles_product.buttons}>
+                    <div className={styles_product.botões}>
                         <button className={styles_product.botão_quantidade}>
                             Quantidade: {quantity}
                             <img 
@@ -81,12 +84,12 @@ function ProductCategory({ isCategoryView = false }) {
         <div className={styles_category.infos}>
             <div className={styles_category.imagens}>
                 <img src={activeImage} id={styles_category.imagem_principal} />
-                <div className={styles_category.thumbnail_container}>
+                <div className={styles_category.imagens_menores}>
                     {data.images.map((image, index) => (
                         <img 
                             key={index} 
                             src={image}
-                            className={`${styles_category.thumbnail} ${activeImage === image ? styles_category.active : ''}`}
+                            className={`${styles_category.imagem_menor} ${activeImage === image ? styles_category.active : ''}`}
                             onClick={() => setActiveImage(image)}
                         />
                     ))}
@@ -94,32 +97,34 @@ function ProductCategory({ isCategoryView = false }) {
             </div>
             <div className={styles_category.infos_direita}>
                 <div className={styles_category.infos_produto}>
-                    <h1>{data.title.toUpperCase()}</h1>
-                    <h2>R$ {data.price.toFixed(2).replace('.', ',')}</h2>
-                    <p className={styles_category.description}>{data.description}</p>
-                    <p className={styles_category.gray_text}>
+                    <p className={styles_category.título}>{data.title.toUpperCase()}</p>
+                    <p className={styles_category.preço}>R$ {data.price.toFixed(2).replace('.', ',')}</p>
+                    <p className={styles_category.descrição}>{data.description}</p>
+                    <p className={styles_category.texto_cinza}>
                         Feito carinhosamente por{' '}
-                        <a href={`/ongs/${data.ong_id}`} className={styles_category.ong_link}>
+                        <a href={`/ongs/${data.ong_id}`} className={styles_category.ong}>
                             {data.ong}
                         </a>
                     </p>
                 </div>
-                <div className={styles_category.purchaseControls}>
+                <div className={styles_category.botões}>
                     <button 
-                        className={styles_category.quantityMinus} 
                         onClick={() => quantity > 1 && setQuantity(quantity - 1)}
-                        disabled={quantity <= 1}
+                        disabled={quantity === 1}
                     >
-                        —
+                        <img
+                            src={quantity === 1 ? botãoMenosTransparente : botãoMenos}
+                        />
                     </button>
-                    <button className={styles_category.buyButton}>
+                    <button className={styles_category.botão_comprar}>
                         Comprar {quantity} uni.
                     </button>
-                    <button 
-                        className={styles_category.quantityPlus} 
+                    <button
                         onClick={() => setQuantity(quantity + 1)}
                     >
-                        +
+                        <img
+                            src={botãoMais}
+                        />                    
                     </button>
                 </div>
             </div>
