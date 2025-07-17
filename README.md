@@ -141,7 +141,7 @@ A plataforma Social Store encontra-se em desenvolvimento ativo. Novas funcionali
   <table>
     <tr>
       <td align="center">
-        <img src="" width="100px" alt="Pessoa 1"/><br/>
+        <img src="https://avatars.githubusercontent.com/u/73610632?v=4" width="100px" alt="Gryghor Camonni"/><br/>
         <b>Pessoa 1</b>
       </td>
       <td align="center">
