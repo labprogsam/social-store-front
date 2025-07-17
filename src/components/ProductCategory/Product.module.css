@@ -5,11 +5,12 @@
     flex-direction: row;
     gap: 52px;
     align-items: flex-start;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins';
+    font-style: normal;
+    color: #1E1E1E;
 }
 
 .imagens {
-    width: 416px;
     display: flex;
     flex-direction: column;
     gap: 21px;
@@ -23,8 +24,8 @@
 
 .thumbnail_container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    gap: 10px;
 }
 
 .thumbnail {
@@ -32,7 +33,6 @@
     height: 60px;
     object-fit: cover;
     cursor: pointer;
-    border: 2px solid transparent;
     transition: border-color 0.2s ease;
 }
 
@@ -41,12 +41,9 @@
 }
 
 .infos_direita {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     padding-top: 46px;
-    max-width: 608px;
     gap: 26px;
 }
 
@@ -57,19 +54,25 @@
     gap: 36px;
 }
 
-.infos_produto h1 {
+.título {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
     margin: 0;
     color: #000;
     text-transform: uppercase;
+    width: 178px;
+    height: 35px;
+    line-height: 30px;
+    color: #000000;
 }
 
-.infos_produto h2 {
+.preço {
     font-size: 24px;
     font-weight: 600;
-    margin: 0;
-    color: #13a6e4;
+    color: #009FE3;
+    width: 108px;
+    height: 33px;
+    line-height: 36px;
 }
 
 .description {
@@ -78,10 +81,10 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+    color: #1E1E1E;
 }
 
 .gray_text {
-    margin: 0;
     width: 421px;
     height: 31px;
     color: rgba(30, 30, 30, 0.54);
@@ -122,20 +125,16 @@
     border: 1px solid #007AFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 3px;
-    font-family: 'Poppins';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 37px;
     color: #009FE3;
-    text-align: center;
 }
 
 .icone_seta {
     position: absolute;
-    right: 22px; /* Ajuste conforme o Figma */
-    top: 50%; /* Alinha verticalmente */
-    transform: translateY(-50%); /* Centraliza exatamente */
+    right: 22px;
+    top: 12px;
 }
 
 .botão_compra {

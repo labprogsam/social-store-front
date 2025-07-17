@@ -27,7 +27,6 @@ function ProductCategory({ isCategoryView = false }) {
             <div className={styles_product.infos}>
                 <div className={styles_product.imagens}>
                     <img src={activeImage} id={styles_product.imagem_principal} />
-                    
                     <div className={styles_product.thumbnail_container}>
                         {data.images.map((image, index) => (
                             <img 
@@ -39,12 +38,11 @@ function ProductCategory({ isCategoryView = false }) {
                         ))}
                     </div>
                 </div>
-                
                 <div className={styles_product.infos_direita}>
                     <div className={styles_product.infos_produto}>
                         <div>
-                            <h1>{data.title.toUpperCase()}</h1>
-                            <h2>R$ {data.price.toFixed(2).replace('.', ',')}</h2>
+                            <p className={styles_product.título}>{data.title.toUpperCase()}</p>
+                            <p className={styles_product.preço}>R$ {data.price.toFixed(2).replace('.', ',')}</p>
                         </div>
                         <div>
                             <p className={styles_product.description}>{data.description}</p>
@@ -56,7 +54,6 @@ function ProductCategory({ isCategoryView = false }) {
                             </p>
                         </div>
                     </div>
-                    
                     <div className={styles_product.buttons}>
                         <button className={styles_product.botão_quantidade}>
                             Quantidade: {quantity}
@@ -84,7 +81,6 @@ function ProductCategory({ isCategoryView = false }) {
         <div className={styles_category.infos}>
             <div className={styles_category.imagens}>
                 <img src={activeImage} id={styles_category.imagem_principal} />
-                
                 <div className={styles_category.thumbnail_container}>
                     {data.images.map((image, index) => (
                         <img 
@@ -96,7 +92,6 @@ function ProductCategory({ isCategoryView = false }) {
                     ))}
                 </div>
             </div>
-            
             <div className={styles_category.infos_direita}>
                 <div className={styles_category.infos_produto}>
                     <h1>{data.title.toUpperCase()}</h1>
@@ -109,7 +104,6 @@ function ProductCategory({ isCategoryView = false }) {
                         </a>
                     </p>
                 </div>
-                
                 <div className={styles_category.purchaseControls}>
                     <button 
                         className={styles_category.quantityMinus} 
