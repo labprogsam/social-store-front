@@ -115,6 +115,7 @@
 
 .botão_quantidade {
     box-sizing: border-box;
+    position: relative;
     width: 608px;
     height: 37px;
     background: #FFFFFF;
@@ -128,6 +129,13 @@
     line-height: 37px;
     color: #009FE3;
     text-align: center;
+}
+
+.icone_seta {
+    position: absolute;
+    right: 22px; /* Ajuste conforme o Figma */
+    top: 50%; /* Alinha verticalmente */
+    transform: translateY(-50%); /* Centraliza exatamente */
 }
 
 .botão_compra {

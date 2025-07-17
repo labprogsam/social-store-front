@@ -1,6 +1,8 @@
 import styles_category from './ProductCategory.module.css';
 import styles_product from './Product.module.css'
 import { useState } from 'react';
+import setaAzul from '../../assets/ProductCategory/botão-seta.svg';
+import carrinhoIcon from '../../assets/ProductCategory/carrinho-icon.svg';
 
 function ProductCategory({ isCategoryView = false }) {
     const data = {
@@ -56,7 +58,14 @@ function ProductCategory({ isCategoryView = false }) {
                     </div>
                     
                     <div className={styles_product.buttons}>
-                        <button className={styles_product.botão_quantidade}>Quantidade: {quantity}</button>
+                        <button className={styles_product.botão_quantidade}>
+                            Quantidade: {quantity}
+                            <img 
+                                src={setaAzul} 
+                                alt="Seta" 
+                                className={styles_product.icone_seta}
+                            />
+                        </button>
                         <button className={styles_product.botão_compra}>Comprar</button>
                     </div>
                 </div>
