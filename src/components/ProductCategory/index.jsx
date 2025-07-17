@@ -25,7 +25,7 @@ function ProductCategory({ isCategoryView = false }) {
     const [activeImage, setActiveImage] = useState(data.images[0]);
     const [quantity, setQuantity] = useState(1);
 
-    if (isCategoryView) {
+    if (!isCategoryView) {
         return (
             <div className={styles_product.infos}>
                 <div className={styles_product.imagens}>
@@ -43,19 +43,15 @@ function ProductCategory({ isCategoryView = false }) {
                 </div>
                 <div className={styles_product.infos_direita}>
                     <div className={styles_product.infos_produto}>
-                        <div>
-                            <p className={styles_product.título}>{data.title.toUpperCase()}</p>
-                            <p className={styles_product.preço}>R$ {data.price.toFixed(2).replace('.', ',')}</p>
-                        </div>
-                        <div>
-                            <p className={styles_product.descrição}>{data.description}</p>
-                            <p className={styles_product.texto_cinza}>
-                                Feito carinhosamente por{' '}
-                                <a href={`/ongs/${data.ong}`} className={styles_product.ong}>
-                                    {data.ong}
-                                </a>
-                            </p>
-                        </div>
+                        <p className={styles_product.título}>{data.title.toUpperCase()}</p>
+                        <p className={styles_product.preço}>R$ {data.price.toFixed(2).replace('.', ',')}</p>
+                        <p className={styles_product.descrição}>{data.description}</p>
+                        <p className={styles_product.texto_cinza}>
+                            Feito carinhosamente por{' '}
+                            <a href={`/ongs/${data.ong}`} className={styles_product.ong}>
+                                {data.ong}
+                            </a>
+                        </p>
                     </div>
                     <div className={styles_product.botões}>
                         <button className={styles_product.botão_quantidade}>

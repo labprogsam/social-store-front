@@ -66,6 +66,7 @@
 .preço {
     width: 168px;
     height: 17px;
+    margin-left: 3px;
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
@@ -73,7 +74,7 @@
 }
 
 .descrição {
-    padding-top: 11px;
+    margin-top: 11px;
     width: 429px;
     height: 95px;
     font-weight: 400;
@@ -83,7 +84,7 @@
 }
 
 .texto_cinza {
-    padding-top: 16px;
+    margin-top: 16px;
     width: 421px;
     height: 31px;
     font-weight: 300;
@@ -107,10 +108,8 @@
 
 .botões {
     display: flex;
-    align-items: center;
+    flex-direction: row;
     gap: 4px;
-    margin-top: auto;
-    padding-top: 20px;
 }
 
 .quantidade_menos, .quantidade_mais {
