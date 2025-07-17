@@ -66,7 +66,14 @@ function ProductCategory({ isCategoryView = false }) {
                                 className={styles_product.icone_seta}
                             />
                         </button>
-                        <button className={styles_product.botão_compra}>Comprar</button>
+                        <button className={styles_product.botão_compra}>
+                            <img
+                                src={carrinhoIcon}
+                                alt="Carrinho"
+                                className={styles_product.carrinho}
+                            />
+                            <span className={styles_product.texto_comprar}>Comprar</span>
+                        </button>
                     </div>
                 </div>
             </div>
