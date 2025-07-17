@@ -37,7 +37,7 @@
 }
 
 .thumbnail.active, .thumbnail:hover {
-    border-color: #13a6e4;
+    border: 1px solid #009FE3;
 }
 
 .infos_direita {
@@ -87,6 +87,7 @@
     color: rgba(30, 30, 30, 0.54);
     font-size: 14px;
     line-height: 21px;
+    font-weight: 300;
 }
 
 .ong_link {
