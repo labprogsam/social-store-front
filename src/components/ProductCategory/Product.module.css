@@ -7,7 +7,6 @@
     align-items: flex-start;
     font-family: 'Poppins';
     font-style: normal;
-    color: #1E1E1E;
 }
 
 .imagens {
@@ -33,11 +32,13 @@
     height: 60px;
     object-fit: cover;
     cursor: pointer;
+    box-sizing: border-box;
     transition: border-color 0.2s ease;
+    border: 1.3px solid transparent;
 }
 
 .imagem_menor.active, .imagem_menor:hover {
-    border: 1px solid #009FE3;
+    border: 1.3px solid #009FE3;
 }
 
 .infos_direita {

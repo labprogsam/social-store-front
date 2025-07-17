@@ -23,6 +23,7 @@
 
 .imagens_menores {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -31,12 +32,13 @@
     height: 45px;
     object-fit: cover;
     cursor: pointer;
-    border: 1px solid transparent;
+    box-sizing: border-box;
     transition: border-color 0.2s ease;
+    border: 1.3px solid transparent;
 }
 
 .imagem_menor.active, .imagem_menor:hover {
-    border: 1px solid #009FE3;
+    border: 1.3px solid #009FE3;
 }
 
 .infos_direita {

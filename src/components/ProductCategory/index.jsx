@@ -51,8 +51,8 @@ function ProductCategory({ isCategoryView = false }) {
                             <p className={styles_product.descrição}>{data.description}</p>
                             <p className={styles_product.texto_cinza}>
                                 Feito carinhosamente por{' '}
-                                <a href={`/ongs/${data.ong_id}`} className={styles_product.ong}>
-                                    {data.ong_id}
+                                <a href={`/ongs/${data.ong}`} className={styles_product.ong}>
+                                    {data.ong}
                                 </a>
                             </p>
                         </div>
