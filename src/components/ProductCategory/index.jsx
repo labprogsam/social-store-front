@@ -55,23 +55,9 @@ function ProductCategory({ isCategoryView = false }) {
                         </div>
                     </div>
                     
-                    <div className={styles_product.purchaseControls}>
-                        <button 
-                            className={styles_product.quantityMinus} 
-                            onClick={() => quantity > 1 && setQuantity(quantity - 1)}
-                            disabled={quantity <= 1}
-                        >
-                            —
-                        </button>
-                        <button className={styles_product.buyButton}>
-                            Comprar {quantity} uni.
-                        </button>
-                        <button 
-                            className={styles_product.quantityPlus} 
-                            onClick={() => setQuantity(quantity + 1)}
-                        >
-                            +
-                        </button>
+                    <div className={styles_product.buttons}>
+                        <button className={styles_product.botão_quantidade}>Quantidade: {quantity}</button>
+                        <button className={styles_product.botão_compra}>Comprar</button>
                     </div>
                 </div>
             </div>
