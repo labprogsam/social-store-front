@@ -18,7 +18,7 @@ export const StyledLine = styled.div`
 `;
 
 export const StyledCategory = styled.p`
-    color: ${(props) => (props.isSelected ? "#0B236D" : "")};
+    color: ${(props) => (props.isselected === "true" ? "#0B236D" : "")};
     margin: 15px 7px;
     cursor: pointer;
     padding-right: 40px;

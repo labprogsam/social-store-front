@@ -50,7 +50,7 @@ function Login() {
   return (
     <StyledMainContainer>
       <StyledLeftSide>
-        <StyledForms onSubmit={onSubmit}>
+        <StyledForms data-testid="login-form" onSubmit={onSubmit}>
           <div>
             <h1>Bem-vindo de volta! 👋</h1>
             <p>

@@ -32,9 +32,9 @@ const InternalRoutes = () => {
           <Route
               path="ong"
               element={
-                <ProtectedRoute>
+                // <ProtectedRoute>
                   <Base />
-                </ProtectedRoute>
+                // </ProtectedRoute>
               }
             >
               <Route index element={<Navigate replace to={"home"} />} />

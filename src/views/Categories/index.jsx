@@ -23,6 +23,8 @@ const Categories = () => {
       "https://mooui.com.br/cdn/shop/files/boneco-encantada-mooui-min.jpg?v=1734458437"
     ],
     "ong": "Instituto Dia Melhor",
+    "ong_id": 1,
+    "phone": 5581996089701,
     "description": "dask oaskd oaksod akso dkaso dkaso kda"
   },
   {
@@ -36,6 +38,8 @@ const Categories = () => {
       "https://mooui.com.br/cdn/shop/files/boneco-encantada-mooui-min.jpg?v=1734458437"
     ],
     "ong": "Instituto Dia Melhor",
+    "ong_id": 1,
+    "phone": 5581996089701,
     "description": "dask oaskd oaksod akso dkaso dkaso kda"
   },
   {
@@ -49,6 +53,8 @@ const Categories = () => {
       "https://mooui.com.br/cdn/shop/files/boneco-encantada-mooui-min.jpg?v=1734458437"
     ],
     "ong": "Instituto Dia Melhor",
+    "ong_id": 1,
+    "phone": 5581996089701,
     "description": "dask oaskd oaksod akso dkaso dkaso kda"
   },
   {
@@ -62,6 +68,8 @@ const Categories = () => {
       "https://mooui.com.br/cdn/shop/files/boneco-encantada-mooui-min.jpg?v=1734458437"
     ],
     "ong": "Instituto Dia Melhor",
+    "ong_id": 1,
+    "phone": 5581996089701,
     "description": "dask oaskd oaksod akso dkaso dkaso kda"
   },
   {
@@ -75,6 +83,8 @@ const Categories = () => {
       "https://mooui.com.br/cdn/shop/files/boneco-encantada-mooui-min.jpg?v=1734458437"
     ],
     "ong": "Instituto Dia Melhor",
+    "ong_id": 1,
+    "phone": 5581996089701,
     "description": "dask oaskd oaksod akso dkaso dkaso kda"
   },
   {
@@ -88,6 +98,8 @@ const Categories = () => {
       "https://mooui.com.br/cdn/shop/files/boneco-encantada-mooui-min.jpg?v=1734458437"
     ],
     "ong": "Instituto Dia Melhor",
+    "ong_id": 1,
+    "phone": 5581996089701,
     "description": "dask oaskd oaksod akso dkaso dkaso kda"
   }
   ]
@@ -105,11 +117,11 @@ const Categories = () => {
 
   return (
     <StyledMainContainer>
-      <Pathing>Home / Categorias / <span>{mapping[id]}</span></Pathing>
+      <Pathing>Home / Categorias / <span data-testid="span-category">{mapping[id]}</span></Pathing>
       <StyledRow>
         <SidebarCategory id={id} />
         <StyledListProducts>
-          <h2 id="main-title">{mapping[id]}</h2>
+          <h2 data-testid="main-title" id="main-title">{mapping[id]}</h2>
           {products.map((data, index) => (
             <ProductCategory key={index} data={data} id={id} />
           ))}
