@@ -1,24 +1,30 @@
 import { useState } from "react";
-import { TextField, Button } from "@mui/material";
-import { CameraAlt, ErrorOutline } from "@mui/icons-material";
+import { TextField, InputAdornment } from "@mui/material";
+import { CameraAlt, ErrorOutline, Edit, Upload, PersonOutline } from "@mui/icons-material";
 
 import {
-    StyledBanner,
     StyledContainer,
-    StyledContent,
-    StyledLogo,
-    StyledOngName,
     Pathing,
-    StyledForm,
+    ProfileHeader,
+    StyledBanner,
+    BannerUploadButton,
+    StyledAvatarContainer,
+    AvatarUploadButton,
+    StyledLogo,
+    StyledContent,
+    StyledOngName,
     StyledActions,
-    StyledAvatarContainer
+    EditButton,
+    StyledForm,
+    FormRow,
+    FinalizeButton
 } from "./styles";
 
 const dadosIniciaisOng = {
     nome: "Instituto Dia melhor",
-    descricao: "",
-    logo: "ex: ../../assets/Ong/Logo.png",
-    banner: "ex: ../../assets/Ong/hero.png"
+    descricao: "Lorem ipsum dolor sit...",
+    logo: "",
+    banner: ""
 };
 
 const Ong = () => {
@@ -28,20 +34,19 @@ const Ong = () => {
     const [dadosOng, setDadosOng] = useState(dadosIniciaisOng);
     const [dadosEditados, setDadosEditados] = useState(dadosIniciaisOng);
 
-    const alternarEdicao = () => {
-        if (editando) {
-            setDadosOng(dadosEditados);
-        } else {
-            setDadosEditados(dadosOng);
-        }
-        setEditando(!editando);
-    };
-
-    const cancelarEdicao = () => {
-        setEditando(false);
+    const handleEditar = () => {
         setDadosEditados(dadosOng);
+        setEditando(true);
     };
 
+    const handleSalvar = () => {
+        setDadosOng(dadosEditados);
+        setEditando(false);
+        if (!cadastroFinalizado) {
+            setCadastroFinalizado(true);
+        }
+    };
+    
     const lidarMudancaInput = (e) => {
         const { name, value } = e.target;
         setDadosEditados(prev => ({ ...prev, [name]: value }));
@@ -50,104 +55,99 @@ const Ong = () => {
     const lidarUploadImagem = (e, campo) => {
         const arquivo = e.target.files[0];
         if (!arquivo) return;
-
         const leitor = new FileReader();
         leitor.onloadend = () => {
-            setDadosEditados(prev => ({
-                ...prev,
-                [campo]: leitor.result
-            }));
+            setDadosEditados(prev => ({ ...prev, [campo]: leitor.result }));
         };
         leitor.readAsDataURL(arquivo);
     };
 
-    if (!temPermissao || !editando) {
-        return (
-            <StyledContainer>
-              
-                <Pathing>Home / Ongs / <b>{dadosEditados.nome}</b></Pathing>
+    if (!temPermissao) {
+        return <StyledContainer><p>Você não tem permissão para visualizar esta página.</p></StyledContainer>;
+    }
 
-                <StyledBanner bannerImage={dadosEditados.banner}>
-                    <Button
-                        variant="contained"
-                        sx={{ margin: "1rem", marginTop:"10%", color:"white" }}
-                        component="label"
-                    >
-                        Upload
-                        <input
-                            type="file"
-                            hidden
-                            accept="image/*"
-                            onChange={(e) => lidarUploadImagem(e, "banner")}
-                        />
-                    </Button>
-
-                    <StyledAvatarContainer>
-                        <StyledLogo src={dadosEditados.logo} alt="Logo da ONG" />
-                        <Button
-                            variant="contained"
-                            sx={{
-                                position: "absolute",
-                                bottom: 0,
-                                right: 0,
-                                minWidth: "30px",
-                                height: "30px",
-                                borderRadius: "50%",
-                                backgroundColor: "#00B0FF",
-                                padding: 0,
-                                zIndex: 2
-                            }}
-                            component="label"
-                        >
-                            <CameraAlt fontSize="small" sx={{ color: "white" }} />
-                            <input
-                                type="file"
-                                hidden
-                                accept="image/*"
-                                onChange={(e) => lidarUploadImagem(e, "logo")}
-                            />
-                        </Button>
-                    </StyledAvatarContainer>
+    return (
+        <StyledContainer>
+            {!editando && <Pathing>Home / Ongs / <b>{dadosOng.nome}</b></Pathing>}
+            
+            <ProfileHeader>
+                <StyledBanner bannerImage={editando ? dadosEditados.banner : dadosOng.banner}>
+                    {editando && (
+                        <BannerUploadButton component="label" variant="contained" startIcon={<Upload />}>
+                            Upload
+                            <input type="file" hidden accept="image/*" onChange={(e) => lidarUploadImagem(e, "banner")} />
+                        </BannerUploadButton>
+                    )}
                 </StyledBanner>
                 
-                <StyledActions style={{ justifyContent: "flex-end" }}>
-                    {!cadastroFinalizado && (
-                        <Button
-                            className="finalize-button"
-                            variant="outlined"
-                            color="error"
-                            startIcon={<ErrorOutline />}
-                        >
-                            Finalize seu cadastro!
-                        </Button>
+                <StyledAvatarContainer>
+                    <StyledLogo src={editando ? dadosEditados.logo : dadosOng.logo} alt="Logo da ONG" />
+                    {editando && (
+                        <AvatarUploadButton component="label" variant="contained">
+                            <CameraAlt sx={{ color: "white" }} />
+                            <input type="file" hidden accept="image/*" onChange={(e) => lidarUploadImagem(e, "logo")} />
+                        </AvatarUploadButton>
                     )}
-                </StyledActions>
+                </StyledAvatarContainer>
+            </ProfileHeader>
 
-                <StyledContent>
+            <StyledActions>
+                {!editando && (
+                    <EditButton variant="contained" startIcon={<Edit />} onClick={handleEditar}>
+                        Editar Perfil
+                    </EditButton>
+                )}
+            </StyledActions>
+
+            <StyledContent>
+                {editando ? (
                     <StyledForm>
+                        <FormRow>
+                            <TextField
+                                fullWidth
+                                label="Nome"
+                                name="nome"
+                                value={dadosEditados.nome}
+                                onChange={lidarMudancaInput}
+                                InputProps={{
+                                    startAdornment: (
+                                        <InputAdornment position="start">
+                                            <PersonOutline />
+                                        </InputAdornment>
+                                    ),
+                                }}
+                            />
+                            {!cadastroFinalizado && (
+                                <FinalizeButton
+                                    variant="outlined"
+                                    color="error"
+                                    startIcon={<ErrorOutline />}
+                                    onClick={handleSalvar}
+                                >
+                                    Finalize seu cadastro!
+                                </FinalizeButton>
+                            )}
+                        </FormRow>
+
                         <TextField
-                            label="Nome"
-                            name="nome"
-                            value={dadosEditados.nome}
-                            onChange={lidarMudancaInput}
                             fullWidth
-                            margin="normal"
-                        />
-                        <TextField
                             label="Descrição"
                             name="descricao"
                             value={dadosEditados.descricao}
                             onChange={lidarMudancaInput}
-                            fullWidth
                             multiline
                             rows={6}
-                            margin="normal"
                         />
                     </StyledForm>
-                </StyledContent>
-            </StyledContainer>
-        );
-    }
+                ) : (
+                    <>
+                        <StyledOngName>{dadosOng.nome}</StyledOngName>
+                        <p>{dadosOng.descricao}</p>
+                    </>
+                )}
+            </StyledContent>
+        </StyledContainer>
+    );
 };
 
 export default Ong;

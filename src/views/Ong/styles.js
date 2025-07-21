@@ -1,13 +1,14 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { Button } from '@mui/material';
 
-// Estilos Gerais
 export const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   padding: 0 20px;
-  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 3rem;
 `;
 
 export const Pathing = styled.p`
@@ -22,115 +23,123 @@ export const Pathing = styled.p`
   }
 `;
 
-export const StyledBanner = styled.div`
+export const ProfileHeader = styled.div`
   position: relative;
   width: 100%;
-  height: 260px;
-  background-image: url(${props => props.bannerImage});
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px 20px 0 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding: 1rem;
+  max-width: 1200px;
+  padding-bottom: 50px; 
 `;
 
+export const StyledBanner = styled.div`
+  width: 100%;
+  height: 260px;
+  border-radius: 20px;
+  display: flex;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+
+  ${props =>
+    props.bannerImage
+      ? css`
+          background-image: url(${props.bannerImage});
+        `
+      : css`
+          background-color: #f0f2f5;
+        `}
+`;
+
+export const BannerUploadButton = styled(Button)`
+  && {
+    margin: 1rem;
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+  }
+`;
 
 export const StyledAvatarContainer = styled.div`
   position: absolute;
   left: 2rem;
-  bottom: -45px;
+  bottom: 0;
   width: 100px;
   height: 100px;
   border-radius: 50%;
   border: 4px solid white;
   background-color: white;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 export const StyledLogo = styled.img`
-  width: 90px;
-  height: 90px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   object-fit: cover;
 `;
 
-
-export const StyledContent = styled.div`
-    width: 100%;
-    max-width: 1200px;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    padding: 0 20px;
+export const AvatarUploadButton = styled(Button)`
+  && {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    z-index: 2;
+  }
 `;
-
-export const StyledOngName = styled.h1`
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-`;
-
-
-// Estilos para o modo de Edição
-export const StyledEditContainer = styled.div`
-    width: 100%;
-    max-width: 1100px;
-    margin: 20px auto;
-    padding: 20px;
-`;
-
 
 export const StyledActions = styled.div`
   display: flex;
   justify-content: flex-end;
-  align-items: center;       
-  gap: 10px;
+  align-items: center;      
+  gap: 1rem;
   width: 100%;
+  max-width: 1200px;
   margin-bottom: 20px;
-  margin-top: 20px;
+  min-height: 40px;
+`;
+
+export const EditButton = styled(Button)`
+  && {
+    margin-left: auto;
+  }
+`;
+
+export const StyledContent = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const StyledOngName = styled.h1`
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+`;
+
+export const StyledForm = styled.form`
+  width: 100%;
+  box-sizing: border-box;
+`;
+
+export const FormRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 2rem;
 `;
 
 
-
-export const StyledForm = styled.div`
-    background-color: white;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    position: relative;
-    
+export const FinalizeButton = styled(Button)`
+  && {
+    white-space: nowrap;
+  }
 `;
-
-export const StyledBannerEditor = styled.div`
-    height: 250px;
-    width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-
-    label, .downloader {
-        border-radius: 12px;
-    }
-`;
-
-export const StyledAvatarEditor = styled.div`
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    border: 6px solid white;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    background-color: #fff;
-    overflow: hidden;
-    position: absolute;
-    top: 170px;
-    left: 40px;
-    z-index: 2;
-
-     label, .downloader {
-        border-radius: 50%;
-    }
-`;
-
