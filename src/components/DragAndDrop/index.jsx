@@ -28,6 +28,7 @@ function ImageDropZone({ noText, name, image, setImage, id }) {
       onDragOver={handleDragOver}
       className={name}
       htmlFor={`fileInput-${id}`}
+      data-testid={`image-dropzone-${id}`}
     >
       {image ? (
         <></>
@@ -41,6 +42,7 @@ function ImageDropZone({ noText, name, image, setImage, id }) {
       )}
       <StyledInput
         type="file"
+        data-testid="input-file"
         accept="image/*"
         onChange={(e) => {
           const file = e.target.files[0];
