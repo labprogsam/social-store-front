@@ -6,6 +6,7 @@ import botãoMenos from '../../assets/ProductCategory/botão-menos.svg';
 import botãoMenosTransparente from '../../assets/ProductCategory/botão-menos-transparente.svg';
 import setaAzul from '../../assets/ProductCategory/botão-seta.svg';
 import carrinhoIcon from '../../assets/ProductCategory/carrinho-icon.svg';
+import { Menu, MenuItem } from '@mui/material';
 
 function ProductCategory({ isCategoryView = false }) {
     const data = {
@@ -24,8 +25,21 @@ function ProductCategory({ isCategoryView = false }) {
 
     const [activeImage, setActiveImage] = useState(data.images[0]);
     const [quantity, setQuantity] = useState(1);
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
 
-    if (isCategoryView) {
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = (value) => {
+        setAnchorEl(null);
+        if (value) {
+            setQuantity(value);
+        }
+    };
+
+    if (!isCategoryView) {
         return (
             <div className={styles_product.infos}>
                 <div className={styles_product.imagens}>
@@ -58,7 +72,12 @@ function ProductCategory({ isCategoryView = false }) {
                         </p>
                     </div>
                     <div className={styles_product.botões}>
-                        <button className={styles_product.botão_quantidade}>
+                        <button 
+                            className={styles_product.botão_quantidade}
+                            onClick={handleClick}
+                            aria-controls="quantidade-menu"
+                            aria-haspopup="true"
+                        >
                             Quantidade: {quantity}
                             <img 
                                 src={setaAzul} 
@@ -66,6 +85,28 @@ function ProductCategory({ isCategoryView = false }) {
                                 className={styles_product.icone_seta}
                             />
                         </button>
+                        <Menu
+                            id="quantidade-menu"
+                            anchorEl={anchorEl}
+                            open={open}
+                            onClose={() => handleClose(null)}
+                            PaperProps={{
+                                style: {
+                                    width: '608px',
+                                },
+                            }}
+                        >
+                            {[1, 2, 3, 4, 5].map((value) => (
+                                <MenuItem 
+                                    key={value} 
+                                    onClick={() => handleClose(value)}
+                                    selected={value === quantity}
+                                    className={styles_product.menuItem} 
+                                >
+                                    Quantidade: {value}
+                                </MenuItem>
+                            ))}
+                        </Menu>
                         <button className={styles_product.botão_compra}>
                             <img
                                 src={carrinhoIcon}
