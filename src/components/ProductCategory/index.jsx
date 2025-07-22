@@ -19,17 +19,21 @@ function ProductCategory({ isCategoryView = false }) {
             "https://mooui.com.br/cdn/shop/files/boneco-encantada-mooui-min.jpg?v=1734458437"
         ],
         "ong": "Instituto Dia Melhor",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and ..."
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and ..."
     }
 
     const [activeImage, setActiveImage] = useState(data.images[0]);
     const [quantity, setQuantity] = useState(1);
 
-    if (!isCategoryView) {
+    if (isCategoryView) {
         return (
             <div className={styles_product.infos}>
                 <div className={styles_product.imagens}>
-                    <img src={activeImage} id={styles_product.imagem_principal} />
+                    <img 
+                        src={activeImage} 
+                        id={styles_product.imagem_principal} 
+                        data-testid="main-image-category"
+                    />
                     <div className={styles_product.imagens_menores}>
                         {data.images.map((image, index) => (
                             <img 
@@ -79,7 +83,11 @@ function ProductCategory({ isCategoryView = false }) {
     return (
         <div className={styles_category.infos}>
             <div className={styles_category.imagens}>
-                <img src={activeImage} id={styles_category.imagem_principal} />
+                <img 
+                    src={activeImage} 
+                    id={styles_category.imagem_principal} 
+                    data-testid="main-image-product"
+                />
                 <div className={styles_category.imagens_menores}>
                     {data.images.map((image, index) => (
                         <img 
