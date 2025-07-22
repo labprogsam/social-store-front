@@ -167,7 +167,7 @@ const OngProduct = () => {
             <ImageDropZone id={1} image={image1} setImage={setImage1} />
           </div>
           <StyledSecondaryImages>
-            <ImageDropZone id={2} image={image2} setImage={setImage2} noText name="minor-upload" />
+            <ImageDropZone id={2} image={image1} setImage={setImage1} noText name="minor-upload" />
             <ImageDropZone id={3} image={image3} setImage={setImage3} noText name="minor-upload" />
             <ImageDropZone id={4} image={image4} setImage={setImage4} noText name="minor-upload" />
             <ImageDropZone id={5} image={image5} setImage={setImage5} noText name="minor-upload" />
