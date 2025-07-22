@@ -89,7 +89,7 @@ describe('Login Component', () => {
     const registerLink = screen.getByText(/Cadastre-se/i);
     expect(registerLink).toHaveAttribute(
       'href',
-      'https://conecta.recife.pe.gov.br/acesso'
+      'https://boraimpactar.recife.pe.gov.br/register'
     );
   });
 });
