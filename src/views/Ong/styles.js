@@ -107,6 +107,7 @@ export const StyledActions = styled.div`
 export const EditButton = styled(Button)`
   && {
     margin-left: auto;
+    color: white;
   }
 `;
 
@@ -131,6 +132,7 @@ export const StyledForm = styled.form`
 
 export const FormRow = styled.div`
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 1rem;
   width: 100%;
@@ -140,6 +142,12 @@ export const FormRow = styled.div`
 
 export const FinalizeButton = styled(Button)`
   && {
+     margin-left: auto;  // <-- Isso empurra o botão para a direita
     white-space: nowrap;
+    padding: 0.5rem 1.7rem;
   }
+`;
+
+export const BotaoDireitaWrapper = styled.div`
+  margin-left: 200px;
 `;
