@@ -5,6 +5,8 @@ import {
   Navigate,
 } from "react-router-dom";
 import { CategoriesView, HomeView, ProductView, OngView, Login, OngProduct } from '../views';
+import ProductDetailView from '../views/ProductDetail';
+
 import {
   Base,
   ScrollToTop
@@ -12,6 +14,13 @@ import {
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ProtectedRoute from './ProtectRoute';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+
 
 const InternalRoutes = () => {
   const queryClient = new QueryClient();
@@ -25,7 +34,10 @@ const InternalRoutes = () => {
           <Route element={<Base />}>
             <Route index element={<Navigate replace to="home" />} />
             <Route path="home" element={<HomeView />} />
-            <Route path="produtos" element={<ProductView />} />
+
+            {/* 2. Adicione a nova rota dinâmica aqui */}
+            <Route path="produtos/:id" element={<ProductDetailView />} /> {/* <-- ADICIONE ESTA LINHA */}
+
             <Route path="categories/:id" element={<CategoriesView />} />
           </Route>
           <Route path="/login" element={<Login />} />
