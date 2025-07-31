@@ -10,14 +10,14 @@ import {
 } from "../../assets";
 
 const productsData = [
-  { nome: "Argila colorida", preco: "R$ 49,90", imagem: argilaColoridaImg },
-  { nome: "Boné Personalizado",preco: "R$ 49,90",imagem: bonePersonalizadoImg,},
-  { nome: "Paçoquinhas", preco: "R$ 49,90", imagem: pacooquinhasImg },
-  { nome: "Vaso de Ceramica", preco: "R$ 49,90", imagem: vasoPersonalizadoImg },
-  { nome: "Porta treco", preco: "R$ 49,90", imagem: saquinhoImg },
-  { nome: "Camisa infantil", preco: "R$ 49,90", imagem: camisaInfantilImg },
-  { nome: "Boneca de chita", preco: "R$ 49,90", imagem: bonecaPanoImg },
-  { nome: "Chapéu de capim do...", preco: "R$ 49,90", imagem: chapeuPalhaImg },
+  { name: "Argila colorida", price: "R$ 49,90", image: argilaColoridaImg, id: 1 },
+  { name: "Boné Personalizado",price: "R$ 49,90",image: bonePersonalizadoImg, id: 2,},
+  { name: "Paçoquinhas", price: "R$ 49,90", image: pacooquinhasImg, id: 3 },
+  { name: "Vaso de Ceramica", price: "R$ 49,90", image: vasoPersonalizadoImg, id: 4 },
+  { name: "Porta treco", price: "R$ 49,90", image: saquinhoImg, id: 5 },
+  { name: "Camisa infantil", price: "R$ 49,90", image: camisaInfantilImg, id: 6 },
+  { name: "Boneca de chita", price: "R$ 49,90", image: bonecaPanoImg, id: 7 },
+  { name: "Chapéu de capim do...", price: "R$ 49,90", image: chapeuPalhaImg, id: 8 },
 ];
 
 export default productsData;

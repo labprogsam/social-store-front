@@ -1,52 +1,41 @@
-import React, { useState } from 'react';
-
-import productsData from "./ProductList.data";
-import ProductCard from "./ProductCard";
+import productsData from '../ProductsHighlights/ProductsData.js';
+import ProductCard from '../ProductsHighlights/Card/index.jsx';
 import TitleBar from "./TitleBar";
 import Button from "./Button";
 
 import {
-	PageContainer,
-	MainContentWrapper,
-	ProductsFlexContainer,
-	ViewMoreButtonContainer
-} from './ProductList.styles';
+  PageContainer,
+  MainContentWrapper,
+  ProductsFlexContainer,
+  ViewMoreButtonContainer
+} from './styles.js';
 
-function ProductList() {
+function ProductList({ isCreate=false }) {
+  const handleViewMoreClick = () => {
+    alert("Visualizar mais produtos!");
+    // Logica para carregar mais produtos aqui!
+  };
 
-	const [selectedProductId, setSelectedProductId] = useState(null);
+  return (
+    <PageContainer>
+      <MainContentWrapper>
+        <TitleBar title="Nossos Produtos" isCreate={isCreate} />
 
-	const handleCardClick = (id) => {
-		setSelectedProductId(id);
-	};
-
-	const handleViewMoreClick = () => {
-		alert("Visualizar mais produtos!");
-		// Logica para carregar mais produtos aqui!
-	};
-
-	return (
-		<PageContainer>
-			<MainContentWrapper>
-				<TitleBar title="Nossos Produtos" />
-
-				<ProductsFlexContainer>
-					{productsData.map((product) => (
-						<ProductCard
-							key={product.id}
-							product={product}
-							isSelected={selectedProductId == product.id}
-							onClick={() => handleCardClick(product.id)}
-						/>
-					))}
-				</ProductsFlexContainer>
-
-				<ViewMoreButtonContainer>
-					<Button onClick={handleViewMoreClick}>Visualizar mais</Button>
-				</ViewMoreButtonContainer>
-			</MainContentWrapper>
-		</PageContainer>
-	);
+        <ProductsFlexContainer>
+          {productsData.map((product) => (
+            <ProductCard
+              isEditable={isCreate}
+              key={product.id}
+              produto={product}
+            />
+          ))}
+        </ProductsFlexContainer>
+        <ViewMoreButtonContainer>
+          <Button onClick={handleViewMoreClick}>Visualizar mais</Button>
+        </ViewMoreButtonContainer>
+      </MainContentWrapper>
+    </PageContainer>
+  );
 }
 
 export default ProductList;

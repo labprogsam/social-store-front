@@ -11,7 +11,7 @@ export const BarContainer = styled.div`
     background-color: rgba(183, 210, 222, 0.45);
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
 
 `;
 
@@ -23,4 +23,24 @@ export const TitleText = styled.h2`
     letter-spacing: 0;
     color: #1e1e1e;
 
+`;
+
+export const StyledButton = styled.a`
+    background-color: #fff;
+    border: solid 1px #009FE3;
+    color: #009FE3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 5px 12px;
+    border-radius: 6px;
+
+    p {
+        margin-right: 6px;
+    }
+
+    &:hover {
+        opacity: 0.7;
+    }
 `;

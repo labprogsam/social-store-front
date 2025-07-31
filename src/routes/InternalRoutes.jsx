@@ -41,6 +41,7 @@ const InternalRoutes = () => {
               <Route index element={<Navigate replace to={"home"} />} />
               <Route path="home" element={<OngView />} />
               <Route path="criar-produto" element={<OngProduct />} />
+              <Route path="produto/:id" element={<OngProduct />} />
             </Route>
           <Route path="*" element={<div>Not found</div>} />
         </Routes>
