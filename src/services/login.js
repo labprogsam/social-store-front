@@ -1,4 +1,4 @@
-import { config, backApi } from './api';
+import api from "./api";
 
 export async function postLogin(email, password) {
   // Simulate backend return
@@ -12,7 +12,3 @@ export async function postLogin(email, password) {
     }
   }
 }
-
-export async function getRefresh() {
-    return backApi.get('login/refresh/',config({}, true));
-  } 
