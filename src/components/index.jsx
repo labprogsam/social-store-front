@@ -6,6 +6,7 @@ import Categories from './Categories';
 import ProductsHighlights from './ProductsHighlights';
 import ProductCategory from './CategoriesProducts/Product';
 import Footer from './Footer';
+import ProductList from './ProductList'
 import SidebarCategory from './CategoriesProducts/Sidebar';
 import Base from './Base';
 import ImageDropZone from './DragAndDrop';
@@ -20,6 +21,7 @@ export {
     ProductCategory,
     ProductsHighlights,
     Footer,
+    ProductList,
     Base,
     ImageDropZone,
     SidebarCategory,

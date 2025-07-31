@@ -38,7 +38,7 @@ const InternalRoutes = () => {
               }
             >
               <Route index element={<Navigate replace to={"home"} />} />
-              <Route path="home" element={<div>ong home</div>} />
+              <Route path="home" element={<OngView />} />
               <Route path="criar-produto" element={<OngProduct />} />
             </Route>
           <Route path="*" element={<div>Not found</div>} />
