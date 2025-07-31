@@ -13,7 +13,7 @@ import Box from '@mui/material/Box';
 
 const OngProduct = () => {
   const [name, setName] = useState("");
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState("");
   const [desc, setDesc] = useState("");
   const [espec, setEspec] = useState("");
   const [chipData, setChipData] = useState([
@@ -79,7 +79,7 @@ const OngProduct = () => {
       <p className="pathing">
         Home / Produtos / <b>criar</b>
       </p>
-      <StyledContainer>
+      <StyledContainer onSubmit={onSubmit}>
         <StyledLeft>
           <div className="row">
             <TextField
@@ -167,7 +167,7 @@ const OngProduct = () => {
             <ImageDropZone id={1} image={image1} setImage={setImage1} />
           </div>
           <StyledSecondaryImages>
-            <ImageDropZone id={2} image={image2} setImage={setImage2} noText name="minor-upload" />
+            <ImageDropZone id={2} image={image1} setImage={setImage1} noText name="minor-upload" />
             <ImageDropZone id={3} image={image3} setImage={setImage3} noText name="minor-upload" />
             <ImageDropZone id={4} image={image4} setImage={setImage4} noText name="minor-upload" />
             <ImageDropZone id={5} image={image5} setImage={setImage5} noText name="minor-upload" />
@@ -185,7 +185,7 @@ const OngProduct = () => {
         </StyledRight>
       </StyledContainer>
       <Button
-        onSubmit={(e) => onSubmit(e)} 
+        type="submit"
         sx={{ maxWidth: '1400px', marginTop: "20px", marginBottom: '50px', color: '#FFF' }}
         variant="contained"
         color="primary"

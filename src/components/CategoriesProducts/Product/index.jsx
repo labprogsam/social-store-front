@@ -1,7 +1,7 @@
 import styles from './styles.module.css';
 import { useState } from 'react';
 
-function ProductCategory({data}) {
+function ProductCategory({ data }) {
   const [activeImage, setActiveImage] = useState(data.images[0]);
   const [quantity, setQuantity] = useState(1);
 
@@ -31,7 +31,7 @@ function ProductCategory({data}) {
           <p className={styles.description}>{data.description}</p>
           <p className={styles.gray_text}>
             Feito carinhosamente por{' '}
-            <a href={`/ongs/${data.ong_id}`} className={styles.ong_link}>
+            <a href={`/app/ongs/${data.ong_id}`} data-testid="link-ong" className={styles.ong_link}>
               {data.ong}
             </a>
           </p>
@@ -45,9 +45,9 @@ function ProductCategory({data}) {
           >
             —
           </button>
-          <button className={styles.buyButton}>
+          <a href={`https://wa.me/${data.phone}?text=${encodeURIComponent(`Olá, me interessei pelo produto ${data.title} e gostaria de comprar ${quantity} uni. Como podemos prosseguir?`)}`} target='_blank' data-testid="buy-button" className={styles.buyButton}>
             Comprar {quantity} uni.
-          </button>
+          </a>
           <button
             className={styles.quantityPlus}
             onClick={() => setQuantity(quantity + 1)}

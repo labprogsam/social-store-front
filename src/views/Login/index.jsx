@@ -50,7 +50,7 @@ function Login() {
   return (
     <StyledMainContainer>
       <StyledLeftSide>
-        <StyledForms onSubmit={onSubmit}>
+        <StyledForms data-testid="login-form" onSubmit={onSubmit}>
           <div>
             <h1>Bem-vindo de volta! 👋</h1>
             <p>
@@ -116,7 +116,7 @@ function Login() {
           </Button>
           <StyledRegister>
             Não possui conta ainda?{" "}
-            <a href="https://conecta.recife.pe.gov.br/acesso"> Cadastre-se</a>
+            <a target="_blank" href="https://boraimpactar.recife.pe.gov.br/register"> Cadastre-se</a>
           </StyledRegister>
         </StyledForms>
       </StyledLeftSide>
