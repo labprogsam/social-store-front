@@ -116,12 +116,12 @@ A plataforma Social Store encontra-se em desenvolvimento ativo. Novas funcionali
   <table>
     <tr>
       <td align="center">
-        <img src="" width="100px" alt="Pessoa 1"/><br/>
-        <b>Pessoa 1</b>
+        <img src="https://avatars.githubusercontent.com/u/73610632?v=4" width="100px" alt="Gryghor Camonni"/><br/>
+        <b>Gryghor Camonni</b>
       </td>
       <td align="center">
-        <img src="" width="100px" alt="Pessoa 2"/><br/>
-        <b>Pessoa 2</b>
+        <img src="https://avatars.githubusercontent.com/u/155683708?v=4" width="100px" alt="Lucas Cabral"/><br/>
+        <b>Lucas Cabral</b>
       </td>
       <td align="center">
         <img src="https://avatars.githubusercontent.com/u/37546200?v=4" width="100px" alt="Samuel Miranda"/><br/>
