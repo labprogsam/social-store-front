@@ -1,3 +1,4 @@
+// src/components/ProductsHighlights/ProductsData.js
 import {
   argilaColoridaImg,
   bonePersonalizadoImg,
@@ -9,6 +10,8 @@ import {
   vasoPersonalizadoImg,
 } from "../../assets";
 
+// Adicionamos um ID para cada produto.
+// O ideal é que esses IDs correspondam aos do nosso serviço mockado
 const productsData = [
   { name: "Argila colorida", price: "R$ 49,90", image: argilaColoridaImg, id: 1 },
   { name: "Boné Personalizado",price: "R$ 49,90",image: bonePersonalizadoImg, id: 2,},
