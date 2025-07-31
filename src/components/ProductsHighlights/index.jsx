@@ -10,7 +10,7 @@ import {
   ProductsFlexContainer,
 } from './styles.js';
 
-function ProductsHighlights({ref}) {
+function ProductsHighlights() {
   const navigate = useNavigate(); // Instancie o hook
 
   // Função que será chamada quando um card for clicado
@@ -25,7 +25,7 @@ function ProductsHighlights({ref}) {
   };
 
   return (
-    <SectionContainer ref={ref}>
+    <SectionContainer>
       <MainContentContainer>
         <TitleBar>
           <TitleText>

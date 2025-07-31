@@ -13,15 +13,14 @@ import {
 // Adicionamos um ID para cada produto.
 // O ideal é que esses IDs correspondam aos do nosso serviço mockado
 const productsData = [
-  // Vamos assumir que a boneca de pano tem id 1 e o vaso tem id 2
-  { id: 1, nome: "Boneca de chita", preco: "R$ 85,00", imagem: bonecaPanoImg },
-  { id: 2, nome: "Vaso de Ceramica", preco: "R$ 49,90", imagem: vasoPersonalizadoImg },
-  { id: 3, nome: "Argila colorida", preco: "R$ 49,90", imagem: argilaColoridaImg },
-  { id: 4, nome: "Boné Personalizado",preco: "R$ 49,90",imagem: bonePersonalizadoImg,},
-  { id: 5, nome: "Paçoquinhas", preco: "R$ 49,90", imagem: pacooquinhasImg },
-  { id: 6, nome: "Porta treco", preco: "R$ 49,90", imagem: saquinhoImg },
-  { id: 7, nome: "Camisa infantil", preco: "R$ 49,90", imagem: camisaInfantilImg },
-  { id: 8, nome: "Chapéu de capim do...", preco: "R$ 49,90", imagem: chapeuPalhaImg },
+  { name: "Argila colorida", price: "R$ 49,90", image: argilaColoridaImg, id: 1 },
+  { name: "Boné Personalizado",price: "R$ 49,90",image: bonePersonalizadoImg, id: 2,},
+  { name: "Paçoquinhas", price: "R$ 49,90", image: pacooquinhasImg, id: 3 },
+  { name: "Vaso de Ceramica", price: "R$ 49,90", image: vasoPersonalizadoImg, id: 4 },
+  { name: "Porta treco", price: "R$ 49,90", image: saquinhoImg, id: 5 },
+  { name: "Camisa infantil", price: "R$ 49,90", image: camisaInfantilImg, id: 6 },
+  { name: "Boneca de chita", price: "R$ 49,90", image: bonecaPanoImg, id: 7 },
+  { name: "Chapéu de capim do...", price: "R$ 49,90", image: chapeuPalhaImg, id: 8 },
 ];
 
 export default productsData;

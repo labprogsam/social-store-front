@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardContainer = styled.div`
+export const CardContainer = styled.a`
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -55,6 +55,6 @@ export const ProductName = styled.h3`
 
 export const ProductPrice = styled.p`
   font-size: 0.875rem;
-  color: #2563eb;
+  color: #009FE3;
   font-weight: 600;
 `;

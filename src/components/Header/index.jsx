@@ -20,7 +20,7 @@ function Header() {
       <div className={styles.container}>
         <div className={styles.left}>
           <img onClick={handleClick} src={logo} alt="Bora Impactar" className={styles.logo} />
-          <Paper
+          {/* <Paper
             component="form"
             sx={{
               p: "2px 4px",
@@ -39,7 +39,7 @@ function Header() {
             <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
               <SearchIcon />
             </IconButton>
-          </Paper>
+          </Paper> */}
         </div>
         <Link to="/login" className={styles.loginButton}>
           Login Ong
