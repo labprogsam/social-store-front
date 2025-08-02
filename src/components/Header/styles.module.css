@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/*seta uma coisas "minimas" para evitar q o layout quebre em telas muito pequenas*/
+html, body {
+  min-width: 360px;
+  overflow-x: auto;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  min-width: 360px; 
+  padding: 12px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+/*icone do menu hamburguer (no desktop vai ficar sempre escondido)*/
+.menuButton {
+  display: none !important;
+}
+
+/*logo*/
+.logo {
+  height: 40px;
+  margin-right: 30px;
+}
+
+/*campo de busca do desktop*/
+.searchInput {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+  max-width: 300px;
+}
+
+/*navegação do desktop*/
+.nav {
+  display: flex;
+  gap: 16px;
+  margin-left: 30px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.navLink:hover {
+  border-bottom: 2px solid #00aaff;
+}
+
+.loginButton {
+  margin-left: 30px;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00aaff;
+  color: white;
+  padding: 16px 15px;
+  border: none;
+  height: 34px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+
+/*link visitado*/
+a:visited {
+  color: white;
+}
+
+/*Layout no mobile: exibe o menu hambúrguer e oculta a navegação padrão*/
+@media (max-width: 768px) {
+  .menuButton {
+    display: block !important; /*força para q o botão de menu apareça só no mobile*/
+    margin-left: 12px;
+  }
+
+  .nav {
+    display: none; /*vai esconder a navegação padrão em telas pequenas*/
+  }
+
+  .loginButton { 
+    display: none; /*vai esconder o botão de login padrão no mobile*/
+  }
+
+  .logo {
+    position: absolute;
+    right: 8px; /*vai mover a logo para a direita no mobile*/
+  }
+}
+
+.loginDrawerButton {
+  display: inline-block;
+  background-color: #00aaff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.loginDrawerButton:hover {
+  background-color: #008fcc;
+}
