@@ -15,4 +15,4 @@ function TitleBar({ title, isCreate=false }) {
 	);
 }
 
-export default TitleBar;
+export default TitleBar; 

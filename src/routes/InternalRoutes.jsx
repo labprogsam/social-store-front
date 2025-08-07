@@ -25,8 +25,8 @@ const InternalRoutes = () => {
           <Route element={<Base />}>
             <Route index element={<Navigate replace to="home" />} />
             <Route path="home" element={<HomeView />} />
-            <Route path="produtos/:productId" element={<ProductView />} />
-            <Route path="produtos" element={<ProductView />} />
+            <Route path="produto/:productId" element={<ProductView />} />
+            {/* <Route path="produto" element={<ProductView />} /> */}
             <Route path="ongs/:id" element={<OngView />} />
             <Route path="categories/:id" element={<CategoriesView />} />
           </Route>

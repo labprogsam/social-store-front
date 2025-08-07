@@ -10,7 +10,7 @@ import {
 } from "./styles.js";
 
 function ProductCard({ produto, isEditable=false }) {
-  const [reference, setReference] = useState(`ong/${produto?.id}`)
+  const [reference, setReference] = useState(`produto/${produto?.id}`)
   useEffect(() => {
     if(isEditable) setReference(`produto/${produto?.id}`)
   }, [isEditable]);
