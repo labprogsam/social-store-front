@@ -22,11 +22,10 @@ import { useEffect, useState } from "react";
 // Estilos para o slide e as imagens
 const slideStyle =
   "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
-const imageStyle = "cursor-pointer h-auto sm:h-32 max-w-[80%] mx-auto py-16";
+const imageStyle = "cursor-pointer mx-auto";
 
 // Componente OngCarousel que renderiza o carrossel de ONGs
 function OngCarousel({ ref }) {
-
   const [ongs, setOngs] = useState([
     { name: "ONG1", logo: ong1, id: 1 },
     { name: "ONG1", logo: ong2, id: 2 },
@@ -96,21 +95,26 @@ function OngCarousel({ ref }) {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        style={{ maxWidth: '1400px' }}
+        style={{ maxWidth: "1400px" }}
       >
         {pages.map((_, page) => (
           <SwiperSlide>
             <div className={slideStyle}>
-              {ongs.map((ongObj, index) => (index >= page*8 && index < (page + 1)*8) && (
-                <a href={`/app/ongs/${ongObj.id}`}>
-                  <img
-                    key={index}
-                    src={ongObj.logo}
-                    alt={`ONG ${index + 1}`}
-                    className={imageStyle}
-                  />
-                </a>
-              ))}
+              {ongs.map(
+                (ongObj, index) =>
+                  index >= page * 8 &&
+                  index < (page + 1) * 8 && (
+                    <div key={index} className="flex justify-center mt-20 mb-20">
+                      <a href={`/app/ongs/${ongObj.id}`}>
+                        <img
+                          src={ongObj.logo}
+                          alt={`ONG ${index + 1}`}
+                          className={imageStyle}
+                        />
+                      </a>
+                    </div>
+                  )
+              )}
             </div>
           </SwiperSlide>
         ))}
