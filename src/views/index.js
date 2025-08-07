@@ -4,6 +4,7 @@ import ProductView from './Product';
 import OngView from './Ong';
 import Login from './Login';
 import OngProduct from './OngProduct';
+import OngClient from './OngClient';
 
 export {
     HomeView,
@@ -11,5 +12,6 @@ export {
     ProductView,
     OngView,
     Login,
-    OngProduct
+    OngProduct,
+    OngClient
 }

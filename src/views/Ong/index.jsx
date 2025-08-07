@@ -111,7 +111,7 @@ const Ong = () => {
                 style={{ width: '60%' }}
               />
 
-              {!cadastroFinalizado && (
+              {!cadastroFinalizado  && (
                 <FinalizeButton
                   variant="outlined"
                   color="error"
