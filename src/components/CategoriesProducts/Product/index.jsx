@@ -1,15 +1,30 @@
 import styles from './styles.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function ProductCategory({ data }) {
   const [activeImage, setActiveImage] = useState(data.images[0]);
   const [quantity, setQuantity] = useState(1);
+  const [ongName, setOngName] = useState('...'); // Estado para o nome da ONG
+
+  useEffect(() => {
+    const fetchOngName = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8000/api/ongs/${data.ongId}`);
+        setOngName(response.data.name); // Assume que a API retorna um objeto com a propriedade 'name'
+      } catch (error) {
+        console.error('Erro ao buscar nome da ONG:', error);
+        setOngName('ONG não encontrada');
+      }
+    };
+
+    fetchOngName();
+  }, [data.ongId]); // O useEffect roda novamente se o ongId mudar
 
   return (
     <div className={styles.infos}>
       <div className={styles.imagens}>
         <img src={activeImage} id={styles.imagem_principal} />
-
         <div className={styles.thumbnail_container}>
           {data.images.map((image, index) => (
             <img
@@ -31,8 +46,8 @@ function ProductCategory({ data }) {
           <p className={styles.description}>{data.description}</p>
           <p className={styles.gray_text}>
             Feito carinhosamente por{' '}
-            <a href={`/app/ongs/${data.ong_id}`} data-testid="link-ong" className={styles.ong_link}>
-              {data.ong}
+            <a href={`/app/ongs/${data.ongId}`} data-testid="link-ong" className={styles.ong_link}>
+              {ongName}
             </a>
           </p>
         </div>
@@ -57,7 +72,7 @@ function ProductCategory({ data }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default ProductCategory;
