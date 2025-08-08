@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.infos {
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+    align-items: flex-start;
+    font-family: 'Poppins';
+    font-style: normal;
+}
+
+.imagens {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#imagem_principal {
+    width: 304px;
+    height: 208px;
+    object-fit: cover;
+}
+
+.imagens_menores {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.imagem_menor {
+    width: 57px;
+    height: 45px;
+    object-fit: cover;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+    border: 1.3px solid transparent;
+}
+
+.imagem_menor.active, .imagem_menor:hover {
+    border: 1.3px solid #009FE3;
+}
+
+.infos_direita {
+    display: flex;
+    flex-direction: column;
+    padding-top: 9px;
+    gap: 21px;
+}
+
+.infos_produto {
+    display: flex;
+    flex-direction: column;
+    object-fit: cover;
+}
+
+.título {
+    width: 178px;
+    height: 35px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+}
+
+.preço {
+    width: 168px;
+    height: 17px;
+    margin-left: 3px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #009FE3;
+}
+
+.descrição {
+    margin-top: 11px;
+    width: 429px;
+    height: 95px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1E1E1E; 
+}
+
+.texto_cinza {
+    margin-top: 16px;
+    width: 421px;
+    height: 31px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+    color: rgba(30, 30, 30, 0.54);
+}
+
+.ong {
+    color: #0B236D;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-decoration-line: underline;
+}
+
+.ong:hover {
+    text-decoration: underline;
+}
+
+.botões {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.quantidade_menos, .quantidade_mais {
+    width: 38px;
+    height: 38px;
+    background: white;
+    border: 2px solid #007AFF;
+    border-radius: 6px;
+    color: #13a6e4;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s ease;
+}
+
+.quantidade_menos:hover, .quantidade_mais:hover {
+    background-color: #f0f8ff;
+}
+
+.quantidade_menos:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: #cccccc;
+    color: #cccccc;
+}
+
+.botão_comprar {
+    flex: 1;
+    width: 395px;
+    height: 37px;
+    background: #009FE3;
+    border-radius: 3px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.botão_comprar:hover {
+    background: #0f8fd8;
+    border-color: #0f8fd8;
+}

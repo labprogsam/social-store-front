@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.infos {
+    display: flex;
+    flex-direction: row;
+    gap: 52px;
+    align-items: flex-start;
+    font-family: 'Poppins';
+    font-style: normal;
+}
+
+.imagens {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+#imagem_principal {
+    width: 416px;
+    height: 324px;
+    object-fit: cover;
+}
+
+.imagens_menores {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.imagem_menor {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+    border: 1.3px solid transparent;
+}
+
+.imagem_menor.active, .imagem_menor:hover {
+    border: 1.3px solid #009FE3;
+}
+
+.infos_direita {
+    display: flex;
+    flex-direction: column;
+    padding-top: 46px;
+    gap: 26px;
+}
+
+.infos_produto {
+    display: flex;
+    flex-direction: column;
+    object-fit: cover;
+}
+
+.título {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    color: #000;
+    text-transform: uppercase;
+    width: 178px;
+    height: 35px;
+    line-height: 30px;
+    color: #000000;
+}
+
+.preço {
+    font-size: 24px;
+    font-weight: 600;
+    color: #009FE3;
+    width: 108px;
+    height: 33px;
+    line-height: 36px;
+}
+
+.descrição {
+    margin-top: 36px;
+    width: 608px;
+    height: 95px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1E1E1E;
+}
+
+.texto_cinza {
+    width: 421px;
+    height: 31px;
+    color: rgba(30, 30, 30, 0.54);
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 300;
+}
+
+.ong {
+    color: #0B236D;
+    font-style: italic;
+    width: 421px;
+    height: 31px;
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-decoration-line: underline;
+}
+
+.ong:hover {
+    text-decoration: underline;
+}
+
+.botões {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.botão_quantidade {
+    box-sizing: border-box;
+    position: relative;
+    width: 608px;
+    height: 37px;
+    background: #FFFFFF;
+    border: 1px solid #007AFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 37px;
+    color: #009FE3;
+}
+
+.icone_seta {
+    position: absolute;
+    right: 22px;
+    top: 12px;
+}
+
+.botão_compra {
+    position: relative;
+    width: 608px;
+    height: 37px;
+    background: #009FE3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    line-height: 27px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.carrinho {
+    position: absolute;
+    left: 236px;
+    top: 5px;
+}
+
+.texto_comprar {
+    position: absolute;
+    left: 274px;
+    top: 5px;
+}
+
+.MuiMenuItem-root.Mui-selected {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.MuiPaper-root {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+
+.MuiMenuItem-root {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.menuItem {
+    display: flex;
+    justify-content: center !important;
+    text-align: center;
+}
+
+.botão_compra:hover {
+    background: #0f8fd8;
+    border-color: #0f8fd8;
+}
