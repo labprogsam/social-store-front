@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/*estilizacao do cabecalho fixo no topo da tela*/
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*container principal, para alinhar os itens horizontalmente*/
+.container {
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  padding: 12px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+.logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-right: 40px;
+}
+
+/*campo de busca*/
+.searchInput {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+  max-width: 300px;
+}
+
+/*navegacao de links*/
+.nav {
+  display: flex;
+  gap: 16px;
+  margin-left: 30px;
+}
+
+/*estilo dos links de navegação*/
+.navLink {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.navLink:hover {
+  border-bottom: 2px solid #00aaff;
+}
+
+.loginButton {
+  margin-left: 30px;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00aaff;
+  color: white;
+  padding: 16px 15px;
+  border: none;
+  height: 34px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}

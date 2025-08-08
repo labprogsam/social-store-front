@@ -25,10 +25,9 @@ Por meio da plataforma, as ONGs podem criar anúncios detalhados de seus produto
 ## Tecnologias Utilizadas
 ### Front-End
 - **React.js**
-- **CSS**
+- **Styled Components**
 - **Material UI tools**
 - **Axios**
-- **Google Cloud Plataform**
 - **Docker**
 
 ## Documentação
@@ -38,20 +37,13 @@ Por meio da plataforma, as ONGs podem criar anúncios detalhados de seus produto
 - [Protótipos no Figma]()
 - [User Stories]()
 - [Canvas do Projeto]()
-- [Postman](https://documenter.getpostman.com/view/30491735/2sB2cVeMfa)
-
-## Funcionalidades
-- Funcionalidade 1
-- Funcionalidade 2
-- Funcionalidade 3
-- Funcionalidade 4
-- Funcionalidade 5
+- [Postman]()
 
 ## Como acessar no navegador?
 **[Clique aqui]() para acessar o front no navegador.**
 
 ### Outros
-- **Figma** (Protótipos)
+- [Figma](https://www.figma.com/design/sC8YqFa7YXtimlMsXWca24/Prot%C3%B3tipo-loja-social?node-id=0-1&p=f&t=wdACcFm5G7QrqSlz-0)
 
 ## Instalação
 
@@ -83,7 +75,7 @@ REACT_APP_MAIN_URL=
 
 4. Inicie o projeto localmente:
 ```bash
-yarn start
+yarn dev
 ```
 
 ## Contribuição
@@ -124,12 +116,12 @@ A plataforma Social Store encontra-se em desenvolvimento ativo. Novas funcionali
   <table>
     <tr>
       <td align="center">
-        <img src="" width="100px" alt="Pessoa 1"/><br/>
-        <b>Pessoa 1</b>
+        <img src="https://avatars.githubusercontent.com/u/73610632?v=4" width="100px" alt="Gryghor Camonni"/><br/>
+        <b>Gryghor Camonni</b>
       </td>
       <td align="center">
-        <img src="" width="100px" alt="Pessoa 2"/><br/>
-        <b>Pessoa 2</b>
+        <img src="https://avatars.githubusercontent.com/u/155683708?v=4" width="100px" alt="Lucas Cabral"/><br/>
+        <b>Lucas Cabral</b>
       </td>
       <td align="center">
         <img src="https://avatars.githubusercontent.com/u/37546200?v=4" width="100px" alt="Samuel Miranda"/><br/>

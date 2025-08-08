@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import {
   Banner,
   Categories,
@@ -6,17 +7,18 @@ import {
   ProductsHighlights,
   Footer
 } from '../../components'
+import {
+  StyledMainContent
+} from './styles';
 
 function Home() {
   return (
-    <div>
-      <Header />
-      <Banner />
-      <Categories />
-      <ProductsHighlights />
-      <OngCarousel />
-      <Footer />
-    </div>
+    <StyledMainContent>
+      <Banner id="banner" />
+      <Categories id="categories" />
+      <ProductsHighlights id="product-hightlight" />
+      <OngCarousel id="ong-carousel" />
+    </StyledMainContent>
   )
 }
 
