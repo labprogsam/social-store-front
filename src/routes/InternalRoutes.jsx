@@ -4,7 +4,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { CategoriesView, HomeView, ProductView, OngView, Login, OngProduct } from '../views';
+import { CategoriesView, HomeView, ProductView, OngView, Login, OngProduct, OngClient } from '../views';
 import {
   Base,
   ScrollToTop
@@ -26,8 +26,7 @@ const InternalRoutes = () => {
             <Route index element={<Navigate replace to="home" />} />
             <Route path="home" element={<HomeView />} />
             <Route path="produto/:productId" element={<ProductView />} />
-            {/* <Route path="produto" element={<ProductView />} /> */}
-            <Route path="ongs/:id" element={<OngView />} />
+            <Route path="ongs/:id" element={<OngClient />} />
             <Route path="categories/:id" element={<CategoriesView />} />
           </Route>
           <Route path="/login" element={<Login />} />

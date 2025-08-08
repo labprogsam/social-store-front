@@ -10,9 +10,10 @@ import {
 } from "./styles.js";
 
 function ProductCard({ produto, isEditable=false }) {
-  const [reference, setReference] = useState(`produto/${produto?.id}`)
+
+  const [reference, setReference] = useState(`${import.meta.env.VITE_FRONT_URL}/app/produto/${produto?.id}`)
   useEffect(() => {
-    if(isEditable) setReference(`produto/${produto?.id}`)
+    if(isEditable) setReference(`${import.meta.env.VITE_FRONT_URL}/app/ong/produto/${produto?.id}`)
   }, [isEditable]);
 
   return (
