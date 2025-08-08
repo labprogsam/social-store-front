@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
 import logo from "../../assets/bora-impactar.svg";
 import Paper from "@mui/material/Paper";
@@ -18,6 +19,11 @@ import Box from "@mui/material/Box";
 
 function Header({ scrollTargets }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/home");
+  }
 
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);

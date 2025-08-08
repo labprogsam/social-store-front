@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-export const StyledContainer = styled.div`
-    width: 100vw;
-    width: 100vh;
+export const StyledMainContent = styled.div`
+
 `;

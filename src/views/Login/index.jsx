@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Button, TextField } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
 import InputLabel from "@mui/material/InputLabel";
@@ -26,14 +26,14 @@ function Login() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const onSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      history.push("/ong/home");
+      navigate("/ong/home");
     }, 2000);
   };
 
@@ -50,12 +50,11 @@ function Login() {
   return (
     <StyledMainContainer>
       <StyledLeftSide>
-        <StyledForms onSubmit={onSubmit}>
+        <StyledForms data-testid="login-form" onSubmit={onSubmit}>
           <div>
             <h1>Bem-vindo de volta! 👋</h1>
             <p>
-              ksdai sidjais sako sdk asod kas dksdoasksakd sidj aisda sijdasi
-              asidj
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
             </p>
           </div>
           <TextField
@@ -117,7 +116,7 @@ function Login() {
           </Button>
           <StyledRegister>
             Não possui conta ainda?{" "}
-            <a href="https://conecta.recife.pe.gov.br/acesso"> Cadastre-se</a>
+            <a target="_blank" href="https://boraimpactar.recife.pe.gov.br/register"> Cadastre-se</a>
           </StyledRegister>
         </StyledForms>
       </StyledLeftSide>
