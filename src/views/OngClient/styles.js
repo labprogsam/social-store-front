@@ -8,11 +8,10 @@ export const StyledContainer = styled.div`
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
-  margin-bottom: 3rem;
 `;
 
 export const Pathing = styled.p`
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.5);
   margin: 13px 0;
   font-size: 13px;
   width: 100%;
