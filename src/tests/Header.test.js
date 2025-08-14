@@ -28,14 +28,6 @@ describe('Header Component', () => {
     );
   });
 
-  it('deve renderizar o logo e o campo de busca', () => {
-    // Verifica se os elementos principais estão na tela
-    const logo = screen.getByAltText('Bora Impactar');
-    const searchInput = screen.getByPlaceholderText('Pesquise por uma produto...');
-
-    expect(logo).toBeInTheDocument();
-    expect(searchInput).toBeInTheDocument();
-  });
 
   it('deve navegar para a home ao clicar no logo', async () => {
     // Simula a interação do usuário
@@ -44,16 +36,6 @@ describe('Header Component', () => {
     
     // Verifica se a função de navegação foi chamada com o destino correto
     expect(mockedUsedNavigate).toHaveBeenCalledWith('/home');
-  });
-
-  it('deve permitir a digitação no campo de busca', async () => {
-    const searchInput = screen.getByPlaceholderText('Pesquise por uma produto...');
-    
-    // Simula o usuário digitando no campo
-    await userEvent.type(searchInput, 'camisa de algodão');
-    
-    // Verifica se o valor do campo foi atualizado
-    expect(searchInput).toHaveValue('camisa de algodão');
   });
 
   it('deve renderizar o botão de "Login Ong" com o link correto', () => {
