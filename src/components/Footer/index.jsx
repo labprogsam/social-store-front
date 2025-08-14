@@ -20,7 +20,9 @@ function Footer() {
                     />
                     <p className="mb-2">Siga nossas redes</p>
                     <div className="flex space-x-4">
-                        <img src={instagram} alt="Instagram" className="w-5 h-5" />
+                        <a href="https://www.instagram.com/boraimpactarrecife/" target="_blank">
+                            <img src={instagram} alt="Instagram" className="w-5 h-5" />
+                        </a>
                         <img src={facebook} alt="Facebook" className="w-5 h-5" />
                         <img src={twitter} alt="Twitter" className="w-5 h-5" />
                     </div>

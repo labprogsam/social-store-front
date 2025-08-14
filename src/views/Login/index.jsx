@@ -114,7 +114,7 @@ function Login() {
             />
           </FormControl>
           <div id="forget-password">
-            <Link to="/ong/esqueceu-senha">Esqueceu a senha?</Link>
+            {/* <Link to="/ong/esqueceu-senha">Esqueceu a senha?</Link> */}
           </div>
           <Button
             onClick={onSubmit}

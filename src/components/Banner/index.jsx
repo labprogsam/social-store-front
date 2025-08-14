@@ -30,9 +30,11 @@ function HomeBanner({ ref }) {
         </p>
 
         {/* Botão Saiba Mais */}
-        <button className="mt-8 bg-[#009FE3] hover:bg-[#007bbf] text-white font-bold py-4 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-          Saiba Mais
-        </button>
+        <a href="https://boraimpactar.recife.pe.gov.br/" target="_blank">
+          <button className="mt-8 bg-[#009FE3] hover:bg-[#007bbf] text-white font-bold py-4 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Saiba Mais
+          </button>
+        </a>
       </div>
     </section>
   );

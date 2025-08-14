@@ -13,6 +13,7 @@ export const Pathing = styled.p`
 
   span {
     color: #1E1E1E;
+    font-weight: 600;
   }
 `;
 

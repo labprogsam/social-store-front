@@ -19,12 +19,12 @@ function ProductCard({ produto, isEditable=false }) {
   return (
     <CardContainer href={reference}>
       <ImageContainer>
-        <ProductImage src={produto.image} alt={produto.name} />
+        <ProductImage src={produto?.images[0]} alt={produto?.title} />
       </ImageContainer>
 
       <DetailsContainer>
-        <ProductName>{produto.name}</ProductName>
-        <ProductPrice>{produto.price}</ProductPrice>
+        <ProductName>{produto?.title}</ProductName>
+        <ProductPrice>R$ {produto?.price.toFixed(2).replace('.', ',')}</ProductPrice>
       </DetailsContainer>
     </CardContainer>
   );
