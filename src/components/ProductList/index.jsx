@@ -1,4 +1,3 @@
-import productsData from '../ProductsHighlights/ProductsData.js';
 import ProductCard from '../ProductsHighlights/Card/index.jsx';
 import TitleBar from "./TitleBar";
 import Button from "./Button";
@@ -10,7 +9,7 @@ import {
   ViewMoreButtonContainer
 } from './styles.js';
 
-function ProductList({ isCreate=false }) {
+function ProductList({ isCreate=false, products }) {
   const handleViewMoreClick = () => {
     alert("Visualizar mais produtos!");
     // Logica para carregar mais produtos aqui!
@@ -22,10 +21,10 @@ function ProductList({ isCreate=false }) {
         <TitleBar title="Nossos Produtos" isCreate={isCreate} />
 
         <ProductsFlexContainer>
-          {productsData.map((product) => (
+          {products?.map((product) => (
             <ProductCard
-              isEditable={isCreate}
-              key={product.id}
+              isEditable={isCreate} 
+              key={product?.id} 
               produto={product}
             />
           ))}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TextField, InputAdornment } from "@mui/material";
 import { CameraAlt, ErrorOutline, Edit, Upload, PersonOutline, AccountCircle } from "@mui/icons-material";
 import { ProductList } from '../../components';
@@ -19,8 +19,11 @@ import {
   FormRow,
   FinalizeButton
 } from "./styles";
+import { useHandleError } from '../../utils/genericError';
+import { getProfile, updateProfile } from '../../services/ong';
+import { useUserData } from '../../services/auth';
 import ong1 from "../../assets/CarouselMoc/ong1.svg";
-import banner from "../../assets/ongViews/bannerExample.png"
+import banner from "../../assets/ongViews/bannerExample.png";
 
 const dadosIniciaisOng = {
   name: "Instituto Dia melhor",
@@ -30,119 +33,125 @@ const dadosIniciaisOng = {
 };
 
 const Ong = () => {
-  const [temPermissao, setTemPermissao] = useState(true);
-  const [cadastroFinalizado, setCadastroFinalizado] = useState(false);
   const [editando, setEditando] = useState(true);
-  const [dadosOng, setDadosOng] = useState(dadosIniciaisOng);
+  const [ongData, setOngData] = useState(dadosIniciaisOng);
+  const [debouncedQuery, setDebouncedQuery] = useState("");
+  const { data } = useUserData();
 
-  const handleEdit = () => {
-    setEditando(true);
-  };
-
-  const handleSave = () => {
-    setDadosOng(dadosEditados);
-    setEditando(false);
-    if (!cadastroFinalizado) {
-      setCadastroFinalizado(true);
+  useEffect(() => {
+    async function fetchData() {
+      const response = await getProfile(data?.user.id);
+      setOngData(response);
     }
-  };
+    if (data?.user) {
+      fetchData();
+    }
+  }, [data?.user.id]);
 
-  const handleInput = (e) => {
-    const { name, value } = e.target;
-    setDadosEditados(prev => ({ ...prev, [name]: value }));
+  // Atualiza debouncedQuery 2s após o usuário parar de digitar
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedQuery(ongData);
+    }, 2000);
+
+    return () => {
+      clearTimeout(handler); 
+    };
+  }, [ongData]);
+
+  useEffect(() => {
+    if (debouncedQuery === "") return;
+
+    async function updateOng() {
+      await updateProfile(debouncedQuery);
+      // setOngData(response);
+    }
+    updateOng();
+  }, [debouncedQuery]);
+
+  const handleInput = (e, field) => {
+    const { value } = e.target;
+    setOngData({
+      ...ongData,
+      [field]: value
+    })
   };
 
   const handleUploadImagem = (e, campo) => {
     const arquivo = e.target.files[0];
     if (!arquivo) return;
-    const leitor = new FileReader();
-    leitor.onloadend = () => {
-      setDadosOng(prev => ({ ...prev, [campo]: leitor.result }));
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setOngData({ ...ongData, [campo]: reader.result });
     };
-    leitor.readAsDataURL(arquivo);
+    reader.readAsDataURL(arquivo);
   };
-
-  if (!temPermissao) {
-    return <StyledContainer><p>Você não tem permissão para visualizar esta página.</p></StyledContainer>;
-  }
 
   return (
     <StyledContainer>
-      {!editando && <Pathing>Home / Ongs / <b>{dadosOng.name}</b></Pathing>}
-
       <ProfileHeader>
-        <StyledBanner bannerimage={dadosOng.banner}>
-          {editando && (
-            <BannerUploadButton component="label" variant="contained" startIcon={<Upload />}>
-              Upload
-              <input type="file" hidden accept="image/*" onChange={(e) => handleUploadImagem(e, "banner")} />
-            </BannerUploadButton>
-          )}
+        <StyledBanner bannerimage={ongData?.banner}>
+
+          <BannerUploadButton component="label" variant="contained" startIcon={<Upload />}>
+            Upload
+            <input type="file" hidden accept="image/*" onChange={(e) => handleUploadImagem(e, "banner")} />
+          </BannerUploadButton>
         </StyledBanner>
 
         <StyledAvatarContainer>
-          {dadosOng.logo ?
-            <StyledLogo src={dadosOng.logo} alt="Logo da ONG" /> :
+          {ongData?.logo || ongData?.gallery_images_url ?
+            <StyledLogo src={ongData?.logo || ongData?.gallery_images_url} alt="Logo da ONG" /> :
             <AccountCircle id="avatar-default" />
           }
-          {editando && (
-            <AvatarUploadButton component="label" variant="contained">
-              <CameraAlt sx={{ color: "white" }} />
-              <input type="file" hidden accept="image/*" onChange={(e) => handleUploadImagem(e, "logo")} />
-            </AvatarUploadButton>
-          )}
+          <AvatarUploadButton component="label" variant="contained">
+            <CameraAlt sx={{ color: "white" }} />
+            <input type="file" hidden accept="image/*" onChange={(e) => handleUploadImagem(e, "logo")} />
+          </AvatarUploadButton>
         </StyledAvatarContainer>
       </ProfileHeader>
 
       <StyledContent>
-        {editando ? (
-          <StyledForm>
-            <FormRow>
-              <TextField
-                label="Nome da Ong"
-                name="name"
-                value={dadosOng.name}
-                onChange={handleInput}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <PersonOutline />
-                    </InputAdornment>
-                  ),
-                }}
-                style={{ width: '60%' }}
-              />
-
-              {!cadastroFinalizado && (
-                <FinalizeButton
-                  variant="outlined"
-                  color="error"
-                  startIcon={<ErrorOutline />}
-                  onClick={handleSave}
-                >
-                  Finalize seu cadastro!
-                </FinalizeButton>
-              )}
-            </FormRow>
-
+        <StyledForm>
+          <FormRow>
             <TextField
-              fullWidth
-              label="Descrição"
-              name="description"
-              value={dadosOng.description}
-              onChange={handleInput}
-              multiline
-              rows={6}
+              label="Nome da Ong"
+              name="name"
+              value={ongData?.name}
+              onChange={(e) => handleInput(e, "name")}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <PersonOutline />
+                  </InputAdornment>
+                ),
+              }}
+              style={{ width: '60%' }}
             />
-          </StyledForm>
-        ) : (
-          <>
-            <StyledOngName>{dadosOng.name}</StyledOngName>
-            <p>{dadosOng.description}</p>
-          </>
-        )}
+
+            {!ongData?.whatsapp && (
+              <FinalizeButton
+                variant="outlined"
+                color="error"
+                startIcon={<ErrorOutline />}
+                onClick={() => {}}
+              >
+                Finalize seu cadastro!
+              </FinalizeButton>
+            )}
+          </FormRow>
+
+          <TextField
+            fullWidth
+            label="Descrição"
+            name="description"
+            value={ongData?.description}
+            onChange={(e) => handleInput(e, "description")}
+            multiline
+            rows={6}
+          />
+        </StyledForm>
       </StyledContent>
-      <ProductList isCreate />
+      <ProductList isCreate products={ongData?.products} />
     </StyledContainer>
   );
 };

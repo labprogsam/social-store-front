@@ -13,7 +13,6 @@ function Header() {
 
   const pathCompleto = location.pathname;
 
-
   const handleClick = () => {
     if (authData && pathCompleto.includes("/ong/")) {
       logout()
@@ -32,7 +31,7 @@ function Header() {
           </Link>
         </div>
         <div onClick={handleClick} className={styles.loginButton}>
-          {(authData && pathCompleto.includes("/ong/")) ? "Encerrar" : "Login Ong"}
+          {(authData && pathCompleto.includes("/ong/")) ? "Encerrar" : "Entrar"}
         </div>
       </div>
     </header>
