@@ -51,7 +51,7 @@ function ProductCategory({ data }) {
           >
             —
           </button>
-          <a href={`https://wa.me/${data?.phone}?text=${encodeURIComponent(`Olá, me interessei pelo produto ${data?.title} e gostaria de comprar ${quantity} uni. Como podemos prosseguir?`)}`} target='_blank' data-testid="buy-button" className={styles.buyButton}>
+          <a href={`https://wa.me/${data?.ong?.whatsapp}?text=${encodeURIComponent(`Olá, me interessei pelo produto ${data?.title} e gostaria de comprar ${quantity} uni. Como podemos prosseguir?`)}`} target='_blank' data-testid="buy-button" className={styles.buyButton}>
             Comprar {quantity} uni.
           </a>
           <button
