@@ -10,7 +10,7 @@ function ProductCategory({ data }) {
   useEffect(() => {
     const fetchOngName = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/ongs/${data.ongId}`);
+        const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/ongs/${data.ongId}`);
         setOngName(response.data.name); // Assume que a API retorna um objeto com a propriedade 'name'
       } catch (error) {
         console.error('Erro ao buscar nome da ONG:', error);
