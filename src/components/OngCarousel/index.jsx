@@ -9,64 +9,43 @@ import "swiper/css/pagination";
 // Importando os assets necessários
 import dividingLine from "../../assets/CarouselMoc/dividingLine.svg";
 import bannerCarousel from "../../assets/CarouselMoc/bannerCarousel.svg";
-import ong1 from "../../assets/CarouselMoc/ong1.svg";
-import ong2 from "../../assets/CarouselMoc/ong2.svg";
-import ong3 from "../../assets/CarouselMoc/ong3.svg";
-import ong4 from "../../assets/CarouselMoc/ong4.svg";
-import ong5 from "../../assets/CarouselMoc/ong5.svg";
-import ong6 from "../../assets/CarouselMoc/ong6.svg";
-import ong7 from "../../assets/CarouselMoc/ong7.svg";
-import ong8 from "../../assets/CarouselMoc/ong8.svg";
-import { useEffect, useState } from "react";
+import { useEffect, useState, forwardRef } from "react";
 
 // Estilos para o slide e as imagens
 const slideStyle =
   "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
-const imageStyle = "cursor-pointer mx-auto";
+const imageStyle =
+  "cursor-pointer flex justify-center items-center sm:h-52 sm:w-52 bg-gray-100 font-semibold border border-gray-300 rounded-full shadow-2xl mx-auto transition-transform transform hover:scale-105";
 
 // Componente OngCarousel que renderiza o carrossel de ONGs
-function OngCarousel({ ref }) {
-  const [ongs, setOngs] = useState([
-    { name: "ONG1", logo: ong1, id: 1 },
-    { name: "ONG1", logo: ong2, id: 2 },
-    { name: "ONG1", logo: ong3, id: 3 },
-    { name: "ONG1", logo: ong4, id: 4 },
-    { name: "ONG1", logo: ong5, id: 5 },
-    { name: "ONG1", logo: ong6, id: 6 },
-    { name: "ONG1", logo: ong7, id: 7 },
-    { name: "ONG1", logo: ong8, id: 8 },
-    { name: "ONG1", logo: ong1, id: 9 },
-    { name: "ONG1", logo: ong2, id: 10 },
-    { name: "ONG1", logo: ong3, id: 11 },
-    { name: "ONG1", logo: ong4, id: 12 },
-    { name: "ONG1", logo: ong5, id: 13 },
-    { name: "ONG1", logo: ong6, id: 14 },
-    { name: "ONG1", logo: ong7, id: 15 },
-    { name: "ONG1", logo: ong8, id: 16 },
-    { name: "ONG1", logo: ong1, id: 17 },
-    { name: "ONG1", logo: ong2, id: 18 },
-    { name: "ONG1", logo: ong3, id: 19 },
-    { name: "ONG1", logo: ong4, id: 20 },
-    { name: "ONG1", logo: ong5, id: 21 },
-    { name: "ONG1", logo: ong6, id: 22 },
-    { name: "ONG1", logo: ong7, id: 23 },
-    { name: "ONG1", logo: ong8, id: 24 },
-    { name: "ONG1", logo: ong1, id: 25 },
-    { name: "ONG1", logo: ong2, id: 26 },
-    { name: "ONG1", logo: ong3, id: 27 },
-    { name: "ONG1", logo: ong4, id: 28 },
-    { name: "ONG1", logo: ong5, id: 29 },
-    { name: "ONG1", logo: ong6, id: 30 },
-    { name: "ONG1", logo: ong7, id: 31 },
-    { name: "ONG1", logo: ong8, id: 32 },
-  ]);
+const OngCarousel = forwardRef((props, ref) => {
+  const [ongs, setOngs] = useState([]);
   const [pages, setPages] = useState([]);
+
+  // Função para buscar as ONGs
+  useEffect(() => {
+    async function fetchOngs() {
+      try {
+        const response = await fetch("http://localhost:8000/api/ongs");
+        const data = await response.json();
+        setOngs(data);
+      } catch (error) {
+        console.error("Erro ao carregar ONGs:", error);
+      }
+    }
+
+    fetchOngs();
+  }, []);
 
   useEffect(() => {
     const pages = Math.ceil(ongs.length / 8);
     const items = [...Array(pages).keys()];
     setPages([...items]);
   }, [ongs]);
+
+  if (ongs.length === 0) {
+    return <div className="text-center p-10">Carregando ONGs...</div>;
+  }
 
   return (
     <section
@@ -98,20 +77,34 @@ function OngCarousel({ ref }) {
         style={{ maxWidth: "1400px" }}
       >
         {pages.map((_, page) => (
-          <SwiperSlide>
+          <SwiperSlide key={page}>
             <div className={slideStyle}>
               {ongs.map(
                 (ongObj, index) =>
                   index >= page * 8 &&
                   index < (page + 1) * 8 && (
-                    <div key={index} className="flex justify-center mt-20 mb-20">
-                      <a href={`/app/ongs/${ongObj.id}`}>
-                        <img
-                          src={ongObj.logo}
-                          alt={`ONG ${index + 1}`}
-                          className={imageStyle}
-                        />
-                      </a>
+                    <div
+                      key={index}
+                      className="flex justify-center mt-20 mb-20"
+                    >
+                      {ongObj.gallery_images_url || ongObj.logo ? (
+                        <a href={`/app/ongs/${ongObj.id}`}>
+                          <img
+                            src={ongObj.logo || ongObj.gallery_images_url}
+                            alt={`ONG ${ongObj.name}`}
+                            className={imageStyle}
+                          />
+                        </a>
+                      ) : (
+                        <span
+                          className="flex justify-center items-center h-52 w-52 bg-gray-100 rounded-full font-semibold sm:text-xl text-center text-gray-700 shadow-2xl border border-gray-300 transition-transform transform hover:scale-105 cursor-pointer"
+                          onClick={() =>
+                            (window.location.href = `/app/ongs/${ongObj.id}`)
+                          }
+                        >
+                          {ongObj.name}
+                        </span>
+                      )}
                     </div>
                   )
               )}
@@ -121,6 +114,6 @@ function OngCarousel({ ref }) {
       </Swiper>
     </section>
   );
-}
+});
 
 export default OngCarousel;
