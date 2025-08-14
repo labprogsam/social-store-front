@@ -29,9 +29,9 @@ function ProductList({ isCreate=false, products }) {
             />
           ))}
         </ProductsFlexContainer>
-        <ViewMoreButtonContainer>
+        {/* <ViewMoreButtonContainer>
           <Button onClick={handleViewMoreClick}>Visualizar mais</Button>
-        </ViewMoreButtonContainer>
+        </ViewMoreButtonContainer> */}
       </MainContentWrapper>
     </PageContainer>
   );

@@ -11,12 +11,25 @@ export const getProfile = async (id) => {
 export const updateProfile = async (content) => {
   const response = await api.put(`/api/ongs`, content);
   return response.data;
-}; 
+};
+
+export const getProduct = async (id) => {
+  const response = await api.get(`/api/products/${id}`);
+  return response.data;
+};
+
+export const putProduct = async (id, content) => {
+  const response = await api.put(`/api/products/${id}`, content);
+  return response.data;
+};
+
+export const postProduct = async (content) => {
+  const response = await api.post(`/api/products`, content);
+  return response.data;
+}
 
 const postSolicitacoes = async (content) => {
-  const response = await api.post("/api/solicitacao", content, {
-    headers: { "Content-Type": "multipart/form-data" },
-  });
+  const response = await api.get(`/api/ongs/${id}`);
   return response.data;
 };
 

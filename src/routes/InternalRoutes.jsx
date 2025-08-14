@@ -4,7 +4,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { CategoriesView, HomeView, ProductView, OngView, Login, OngProduct, OngClient } from '../views';
+import { CategoriesView, HomeView, ProductView, OngView, Login, OngProduct, OngClient, NotFound } from '../views';
 import {
   Base,
   ScrollToTop
@@ -43,7 +43,7 @@ const InternalRoutes = () => {
               <Route path="criar-produto" element={<OngProduct />} />
               <Route path="produto/:id" element={<OngProduct />} />
             </Route>
-          <Route path="*" element={<div>Not found</div>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </QueryClientProvider>

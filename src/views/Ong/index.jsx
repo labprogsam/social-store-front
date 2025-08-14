@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { TextField, InputAdornment } from "@mui/material";
-import { CameraAlt, ErrorOutline, Edit, Upload, PersonOutline, AccountCircle } from "@mui/icons-material";
+import { CameraAlt, ErrorOutline, Upload, PersonOutline, AccountCircle } from "@mui/icons-material";
+import { Toaster } from "react-hot-toast";
 import { ProductList } from '../../components';
 import {
   StyledContainer,
@@ -19,7 +20,6 @@ import {
   FormRow,
   FinalizeButton
 } from "./styles";
-import { useHandleError } from '../../utils/genericError';
 import { getProfile, updateProfile } from '../../services/ong';
 import { useUserData } from '../../services/auth';
 import ong1 from "../../assets/CarouselMoc/ong1.svg";
@@ -64,7 +64,6 @@ const Ong = () => {
 
     async function updateOng() {
       await updateProfile(debouncedQuery);
-      // setOngData(response);
     }
     updateOng();
   }, [debouncedQuery]);
@@ -89,6 +88,11 @@ const Ong = () => {
 
   return (
     <StyledContainer>
+      <Toaster
+        toastOptions={{
+          style: { borderRadius: "4px" },
+          position: "top-right",
+        }} />
       <ProfileHeader>
         <StyledBanner bannerimage={ongData?.banner}>
 

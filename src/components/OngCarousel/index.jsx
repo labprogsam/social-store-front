@@ -15,7 +15,7 @@ import { useEffect, useState, forwardRef } from "react";
 const slideStyle =
   "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
 const imageStyle =
-  "cursor-pointer flex justify-center items-center sm:h-52 sm:w-52 bg-gray-100 font-semibold border border-gray-300 rounded-full shadow-2xl mx-auto transition-transform transform hover:scale-105";
+  "cursor-pointer flex justify-center object-cover items-center sm:h-52 sm:w-52 bg-gray-100 font-semibold border border-gray-300 rounded-full shadow-2xl mx-auto transition-transform transform hover:scale-105";
 
 // Componente OngCarousel que renderiza o carrossel de ONGs
 const OngCarousel = forwardRef((props, ref) => {
