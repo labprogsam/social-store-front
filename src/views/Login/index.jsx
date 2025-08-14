@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { useNavigate, Link } from "react-router-dom";
 import { Button, TextField } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
@@ -9,6 +10,7 @@ import IconButton from "@mui/material/IconButton";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import LoginBanner from "../../assets/Login/login.png";
+import { useLogin, useUserData } from "../../services/auth";
 import {
   StyledMainContainer,
   StyledLeftSide,
@@ -22,20 +24,27 @@ import {
 //       utilização dos cookies
 
 function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const navigate = useNavigate();
+  const from = location.state?.from || "/ong/home";
 
-  const onSubmit = (e) => {
-    e.preventDefault();
+  const { data } = useUserData();
+  const { mutate: login, isPending } = useLogin();
+
+  useEffect(() => {
+    data && navigate(from, { replace: true });
+  }, [data, from, navigate]);
+
+  const onSubmit = useCallback(() => {
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      navigate("/ong/home");
-    }, 2000);
-  };
+    login({ email: email, password: password });
+    setLoading(false);
+    setEmail("");
+    setPassword("");
+  }, [email, password, login]);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -50,11 +59,16 @@ function Login() {
   return (
     <StyledMainContainer>
       <StyledLeftSide>
-        <StyledForms data-testid="login-form" onSubmit={onSubmit}>
+        <Toaster
+          toastOptions={{
+            style: { borderRadius: "4px" },
+            position: "top-right",
+          }} />
+        <StyledForms data-testid="login-form">
           <div>
             <h1>Bem-vindo de volta! 👋</h1>
             <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
+              Você deseja visitar o portal do cliente? <Link className="portal" to="/">Clique aqui</Link>
             </p>
           </div>
           <TextField
@@ -103,13 +117,14 @@ function Login() {
             <Link to="/ong/esqueceu-senha">Esqueceu a senha?</Link>
           </div>
           <Button
-            type="submit"
+            onClick={onSubmit}
             size="small"
             color="primary"
             loading={loading}
             loadingPosition="end"
             variant="contained"
             fullWidth
+            disabled={isPending}
             id="login-button"
           >
             Entrar
