@@ -2,7 +2,7 @@ import api from './api';
 
 export const getProductsByCategory = async (categoryId) => {
   try {
-    const response = await api.get('/products/by-category', { 
+    const response = await api.get('/api/products/by-category', { 
       params: { categoryId: categoryId } 
     });
     return response.data.data;

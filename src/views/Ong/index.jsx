@@ -19,12 +19,14 @@ import {
   FormRow,
   FinalizeButton
 } from "./styles";
+import ong1 from "../../assets/CarouselMoc/ong1.svg";
+import banner from "../../assets/ongViews/bannerExample.png"
 
 const dadosIniciaisOng = {
   name: "Instituto Dia melhor",
   description: "Lorem ipsum dolor sitd asdok asdk aoskd asokd asodl asdlpasl dapsld aspdlk asokd oasd lasdp asldkoas odkas dpalsd pasld kasodk asodl aps dla",
-  logo: "",
-  banner: ""
+  logo: ong1,
+  banner: banner
 };
 
 const Ong = () => {
@@ -79,7 +81,7 @@ const Ong = () => {
         </StyledBanner>
 
         <StyledAvatarContainer>
-          {dadosOng.logo ? 
+          {dadosOng.logo ?
             <StyledLogo src={dadosOng.logo} alt="Logo da ONG" /> :
             <AccountCircle id="avatar-default" />
           }

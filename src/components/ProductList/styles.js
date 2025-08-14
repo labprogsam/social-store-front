@@ -25,7 +25,6 @@ export const ProductsFlexContainer = styled.div`
 `;
 
 export const ViewMoreButtonContainer = styled.div`
-    margin-top: 32px;
     text-align: center;
     width: 100%;
 `;

@@ -7,7 +7,6 @@ export const StyledContainer = styled.div`
   align-items: center;
   width: 100%;
   padding: 0 20px;
-  margin-top: 40px;
   box-sizing: border-box;
 `;
 
@@ -50,15 +49,6 @@ export const StyledBanner = styled.div`
         `}
 `;
 
-export const BannerUploadButton = styled(Button)`
-  && {
-    margin: 1rem;
-    color: white;
-    align-self: flex-end;
-    margin-left: auto;
-  }
-`;
-
 export const StyledAvatarContainer = styled.div`
   position: absolute;
   left: 2rem;
@@ -87,73 +77,20 @@ export const StyledLogo = styled.img`
   object-fit: cover;
 `;
 
-export const AvatarUploadButton = styled(Button)`
-  && {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    min-width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    padding: 0;
-    z-index: 2;
-  }
-`;
-
-export const StyledActions = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;      
-  gap: 1rem;
-  width: 100%;
-  max-width: 1400px;
-  margin-bottom: 20px;
-  min-height: 40px;
-`;
-
-export const EditButton = styled(Button)`
-  && {
-    margin-left: auto;
-    color: white;
-  }
-`;
-
 export const StyledContent = styled.div`
   width: 100%;
   max-width: 1400px;
   display: flex;
   flex-direction: column;
+  padding-left: 30px;
+  margin-bottom: 20px;
 `;
 
 export const StyledOngName = styled.h1`
-  font-size: 28px;
-  font-weight: bold;
-  color: #333;
+  font-size: 24px;
+  color: #000000;
   margin: 0;
-`;
-
-export const StyledForm = styled.form`
-  width: 100%;
-  box-sizing: border-box;
-`;
-
-export const FormRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-  margin-bottom: 2rem;
-  margin-top: 5px;
-`;
-
-
-export const FinalizeButton = styled(Button)`
-  && {
-     margin-left: auto;  // <-- Isso empurra o botão para a direita
-    white-space: nowrap;
-    padding: 0.5rem 1.7rem;
-  }
+  margin-bottom: 15px;
 `;
 
 export const BotaoDireitaWrapper = styled.div`

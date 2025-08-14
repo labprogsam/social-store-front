@@ -3,25 +3,24 @@ import api from "./api";
 import toast from "react-hot-toast";
 
 //Requisições
-
 const fetchLogin = async (credentials) => {
-  const response = await api.post("/api/login", credentials, {
+  const response = await api.post("/api/auth/login", credentials, {
     withCredentials: true, //  Send cookies with request
   });
-  console.log('Credenciais: ', credentials);
   return response.data;
 };
+
 const fetchLogout = async () => {
-  const response = await api.post("/api/logout"); // Adicionado /api
+  const response = await api.post("/api/auth/logout"); // Adicionado /api
   return response.data;
 };
+
 const fetchUserData = async () => {
-  const response = await api.get("/api/login"); // Adicionado /api
+  const response = await api.get("/api/auth/verifyCredentials"); // Adicionado /api
   return response.data;
 };
 
 //Processamento das requisições com ReactQuery
-
 const useLogin = () => {
   const queryClient = useQueryClient();
   return useMutation({
@@ -42,6 +41,7 @@ const useLogin = () => {
     },
   });
 };
+
 const useLogout = () => {
   const queryClient = useQueryClient();
   return useMutation({

@@ -28,6 +28,11 @@ export const StyledForms = styled.form`
         margin: 15px 0;
     }
 
+    .portal {
+        color: #00aaff;
+        text-decoration: none;
+    }
+
     #login-button {
         background-color: #009FE3;
         margin-top: 10px;
