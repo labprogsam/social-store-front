@@ -1,4 +1,4 @@
-# Logs
+´# Logs
 logs
 *.log
 npm-debug.log*
@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 yarn.lock
+package-lock.json

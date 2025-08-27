@@ -28,24 +28,7 @@ Por meio da plataforma, as ONGs podem criar anúncios detalhados de seus produto
 - **Styled Components**
 - **Material UI tools**
 - **Axios**
-- **Google Cloud Plataform**
 - **Docker**
-
-### Back-End
-- **API RESTful**
-- **Node.js**
-- **Express**
-- **Sequelize ORM**
-- **Middlewares**
-- **Sistema de autenticação com tokens (JWT)**
-- **Google Cloud Plataform**
-- **Docker**
-
-### Banco de Dados
-- **PostgreSQL**
-
-### Armazenamento de Imagens
-- **Cloudinary** (upload, processamento e armazenamento)
 
 ## Documentação
 - [Documentação dos requisitos]()
@@ -54,21 +37,13 @@ Por meio da plataforma, as ONGs podem criar anúncios detalhados de seus produto
 - [Protótipos no Figma]()
 - [User Stories]()
 - [Canvas do Projeto]()
-- [Postman](https://documenter.getpostman.com/view/30491735/2sB2cVeMfa)
-
-## Funcionalidades
-- Funcionalidade 1
-- Funcionalidade 2
-- Funcionalidade 3
-- Funcionalidade 4
-- Funcionalidade 5
+- [Postman]()
 
 ## Como acessar no navegador?
 **[Clique aqui]() para acessar o front no navegador.**
-**[Clique aqui]() para acessar o backend no navegador.**
 
 ### Outros
-- **Figma** (Protótipos)
+- [Figma](https://www.figma.com/design/sC8YqFa7YXtimlMsXWca24/Prot%C3%B3tipo-loja-social?node-id=0-1&p=f&t=wdACcFm5G7QrqSlz-0)
 
 ## Instalação
 
@@ -100,7 +75,7 @@ REACT_APP_MAIN_URL=
 
 4. Inicie o projeto localmente:
 ```bash
-yarn start
+yarn dev
 ```
 
 ## Contribuição
@@ -154,7 +129,7 @@ A plataforma Social Store encontra-se em desenvolvimento ativo. Novas funcionali
       </td>
       <td align="center">
         <img src="" width="100px" alt="Pessoa 3"/><br/>
-        <b>Pessoa 3</b>
+        <b>Ivan</b>
       </td>
     </tr>
   </table>

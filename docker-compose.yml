@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_SERVER_URL: "http://localhost:8000"
+        VITE_FRONT_URL: "http://localhost:5173"
+    ports:
+      - "80:80"
+    restart: unless-stopped
