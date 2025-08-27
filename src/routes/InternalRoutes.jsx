@@ -19,7 +19,7 @@ const InternalRoutes = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
-      <Router basename="/app">
+      <Router /* basename="/app" */>
         <ScrollToTop />
         <Routes>
           <Route element={<Base />}>
