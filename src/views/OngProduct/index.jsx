@@ -137,7 +137,7 @@ const OngProduct = () => {
         "Erro ao conectar com servidor. Tente novamente.",
       );
     } else {
-      window.location.replace("/app/ong/home");
+      window.location.replace("/ong/home");
       toast.success(
         "Sucesso ao editar o produto!"
       );

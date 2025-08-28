@@ -37,7 +37,7 @@ function ProductCategory({ data }) {
           <p className={styles.description}>{data?.description}</p>
           <p className={styles.gray_text}>
             Feito carinhosamente por{' '}
-            <a href={`/app/ongs/${data?.ong?.id}`} data-testid="link-ong" className={styles.ong_link}>
+            <a href={`/ongs/${data?.ong?.id}`} data-testid="link-ong" className={styles.ong_link}>
               {data?.ong?.name}
             </a>
           </p>

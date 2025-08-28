@@ -39,7 +39,7 @@ const ProductsHighlights = forwardRef((props, ref) => {
       return;
     }
     // Navega para a página do produto com o ID correspondente
-    navigate(`/app/produto/${productId}`);
+    navigate(`produto/${productId}`);
   };
 
   if (products.length === 0) {

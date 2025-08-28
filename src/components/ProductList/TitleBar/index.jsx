@@ -6,7 +6,7 @@ function TitleBar({ title, isCreate=false }) {
 		<BarContainer>
 			<TitleText>{title}</TitleText>
 			{ isCreate &&
-				<StyledButton href="/app/ong/criar-produto">
+				<StyledButton href="ong/criar-produto">
 					<p>Criar</p>
 					<ControlPoint />
 				</StyledButton>
