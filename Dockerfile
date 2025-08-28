@@ -21,27 +21,28 @@ ENV VITE_FRONT_URL=$VITE_FRONT_URL
 # Build do projeto
 RUN npm run build
 
-# Etapa 2: Servir com NGINX
-FROM nginx:alpine
+# Etapa 2: Servir com serve
+FROM node:20-alpine
 
-# Remove configuração default do NGINX
-RUN rm -rf /usr/share/nginx/html/*
+WORKDIR /app
 
-# Copia os arquivos buildados para o NGINX
-COPY --from=build /app/dist /usr/share/nginx/html
+# Instala o serve globalmente
+RUN npm install -g serve
 
-# Copia configuração customizada do NGINX (opcional)
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copia os arquivos buildados
+COPY --from=build /app/dist ./dist
 
-EXPOSE 80
+# Expõe a porta 3008
+EXPOSE 3008
 
-CMD ["nginx", "-g", "daemon off;"]
+# Comando para servir a aplicação
+CMD ["serve", "-s", "dist", "-l", "3008"]
 
 # Como rodar?
 
 # docker build \
 #  --build-arg VITE_SERVER_URL="http://localhost:8000" \
-#  --build-arg VITE_FRONT_URL="http://localhost:5173" \
+#  --build-arg VITE_FRONT_URL="http://localhost:3000" \
 #  -t social-store-front .
 
-# docker run -p 80:80 social-store-front
+# docker run -p 3000:3000 social-store-front
