@@ -99,7 +99,7 @@ const OngCarousel = forwardRef((props, ref) => {
                         <span
                           className="flex justify-center items-center h-52 w-52 bg-gray-100 rounded-full font-semibold sm:text-xl text-center text-gray-700 shadow-2xl border border-gray-300 transition-transform transform hover:scale-105 cursor-pointer"
                           onClick={() =>
-                            (window.location.href = `/ongs/${ongObj.id}`)
+                            (window.location.href = `/lojasocial/ongs/${ongObj.id}`)
                           }
                         >
                           {ongObj.name}
