@@ -19,7 +19,7 @@ const ProductsHighlights = forwardRef((props, ref) => {
     async function fetchProducts() {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/products/highlights"
+          "http://vm-cinboraimpactar2.cin.ufpe.br/lojasocial/products/highlights"
         );
         const data = await response.json();
         setProducts(data);

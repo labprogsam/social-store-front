@@ -26,7 +26,7 @@ const OngCarousel = forwardRef((props, ref) => {
   useEffect(() => {
     async function fetchOngs() {
       try {
-        const response = await fetch("http://localhost:8000/api/ongs");
+        const response = await fetch("http://vm-cinboraimpactar2.cin.ufpe.br/lojasocial/ongs");
         const data = await response.json();
         setOngs(data);
       } catch (error) {
